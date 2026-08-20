@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+.axis { stroke: #6b7280; stroke-width: 1; }
+.grid { stroke: #e5e7eb; stroke-width: 1; }
+.label { font-size: 12px; }
+.title { font-size: 20px; font-weight: 600; }
+</style>
+<text x="90" y="30" class="title">RegMean minus simple across alpha</text>
+<line x1="90" y1="410.0" x2="950" y2="410.0" class="grid" />
+<text x="80" y="414.0" text-anchor="end" class="label">-0.210</text>
+<line x1="90" y1="322.5" x2="950" y2="322.5" class="grid" />
+<text x="80" y="326.5" text-anchor="end" class="label">-0.105</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="grid" />
+<text x="80" y="239.0" text-anchor="end" class="label">+0.000</text>
+<line x1="90" y1="147.5" x2="950" y2="147.5" class="grid" />
+<text x="80" y="151.5" text-anchor="end" class="label">+0.105</text>
+<line x1="90" y1="60.0" x2="950" y2="60.0" class="grid" />
+<text x="80" y="64.0" text-anchor="end" class="label">+0.210</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="axis" />
+<line x1="90" y1="60" x2="90" y2="410" class="axis" />
+<rect x="141.6" y="235.0" width="111.8" height="2.4" fill="#dc2626" rx="2" />
+<text x="197.5" y="253.4" text-anchor="middle" class="label">-0.0029</text>
+<text x="197.5" y="475" text-anchor="end" transform="rotate(-25 197.5,475)" class="label">alpha_5.0</text>
+<rect x="356.6" y="219.6" width="111.8" height="15.4" fill="#059669" rx="2" />
+<text x="412.5" y="213.6" text-anchor="middle" class="label">+0.0185</text>
+<text x="412.5" y="475" text-anchor="end" transform="rotate(-25 412.5,475)" class="label">alpha_1.0</text>
+<rect x="571.6" y="181.2" width="111.8" height="53.8" fill="#059669" rx="2" />
+<text x="627.5" y="175.2" text-anchor="middle" class="label">+0.0645</text>
+<text x="627.5" y="475" text-anchor="end" transform="rotate(-25 627.5,475)" class="label">alpha_0.5</text>
+<rect x="786.6" y="60.3" width="111.8" height="174.7" fill="#059669" rx="2" />
+<text x="842.5" y="54.3" text-anchor="middle" class="label">+0.2096</text>
+<text x="842.5" y="475" text-anchor="end" transform="rotate(-25 842.5,475)" class="label">alpha_0.1</text>
+<text x="20" y="235.0" transform="rotate(-90 20,235.0)" class="label">Accuracy delta</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+.axis { stroke: #6b7280; stroke-width: 1; }
+.grid { stroke: #e5e7eb; stroke-width: 1; }
+.label { font-size: 12px; }
+.title { font-size: 20px; font-weight: 600; }
+</style>
+<text x="90" y="30" class="title">Function-space symmetric KL to centralized</text>
+<line x1="90" y1="410.0" x2="950" y2="410.0" class="grid" />
+<text x="80" y="414.0" text-anchor="end" class="label">-0.010</text>
+<line x1="90" y1="322.5" x2="950" y2="322.5" class="grid" />
+<text x="80" y="326.5" text-anchor="end" class="label">-0.005</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="grid" />
+<text x="80" y="239.0" text-anchor="end" class="label">+0.000</text>
+<line x1="90" y1="147.5" x2="950" y2="147.5" class="grid" />
+<text x="80" y="151.5" text-anchor="end" class="label">+0.005</text>
+<line x1="90" y1="60.0" x2="950" y2="60.0" class="grid" />
+<text x="80" y="64.0" text-anchor="end" class="label">+0.010</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="axis" />
+<line x1="90" y1="60" x2="90" y2="410" class="axis" />
+<rect x="115.8" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="143.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="143.8" y="475" text-anchor="end" transform="rotate(-25 143.8,475)" class="label">simple_avg</text>
+<rect x="223.3" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="251.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="251.2" y="475" text-anchor="end" transform="rotate(-25 251.2,475)" class="label">sample_weighted_avg</text>
+<rect x="330.8" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="358.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="358.8" y="475" text-anchor="end" transform="rotate(-25 358.8,475)" class="label">regmean_equal</text>
+<rect x="438.3" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="466.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="466.2" y="475" text-anchor="end" transform="rotate(-25 466.2,475)" class="label">regmean_sample_weighted</text>
+<rect x="545.8" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="573.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="573.8" y="475" text-anchor="end" transform="rotate(-25 573.8,475)" class="label">regmean_hidden_layers</text>
+<rect x="653.3" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="681.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="681.2" y="475" text-anchor="end" transform="rotate(-25 681.2,475)" class="label">regmean_hidden_layers_last_layer_tune</text>
+<rect x="760.8" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="788.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="788.8" y="475" text-anchor="end" transform="rotate(-25 788.8,475)" class="label">regmean_hidden_layers_hidden_head_tune</text>
+<rect x="868.3" y="235.0" width="55.9" height="0.0" fill="#059669" rx="2" />
+<text x="896.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="896.2" y="475" text-anchor="end" transform="rotate(-25 896.2,475)" class="label">centralized</text>
+<text x="20" y="235.0" transform="rotate(-90 20,235.0)" class="label">Symmetric KL</text>
+</svg>

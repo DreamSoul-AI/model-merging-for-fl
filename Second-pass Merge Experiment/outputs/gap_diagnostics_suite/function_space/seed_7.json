@@ -1,0 +1,78 @@
+{
+  "config": {
+    "data_root": "work/data",
+    "device": "cpu",
+    "seed": 7,
+    "num_clients": 10,
+    "train_batch_size": 128,
+    "eval_batch_size": 512,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "hidden_sizes": [
+      128,
+      128
+    ],
+    "split_mode": "dirichlet",
+    "dirichlet_alpha": 0.5,
+    "pathological_classes_per_client": 2,
+    "calibration_size": 256,
+    "regmean_lambda": 0.001,
+    "client_epochs": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      15,
+      20,
+      30,
+      50
+    ],
+    "centralized_epochs": 10,
+    "post_merge_steps": 50,
+    "post_merge_lr": 0.0005
+  },
+  "diagnostics": {
+    "simple_avg": {
+      "symmetric_kl_to_centralized": 2.147081136703491,
+      "prediction_agreement_to_centralized": 0.7789999842643738,
+      "self_accuracy_on_eval_subset": 0.7799999713897705
+    },
+    "sample_weighted_avg": {
+      "symmetric_kl_to_centralized": 1.6997573375701904,
+      "prediction_agreement_to_centralized": 0.8579999804496765,
+      "self_accuracy_on_eval_subset": 0.859000027179718
+    },
+    "regmean_equal": {
+      "symmetric_kl_to_centralized": 1.240270972251892,
+      "prediction_agreement_to_centralized": 0.8289999961853027,
+      "self_accuracy_on_eval_subset": 0.8289999961853027
+    },
+    "regmean_sample_weighted": {
+      "symmetric_kl_to_centralized": 1.1351807117462158,
+      "prediction_agreement_to_centralized": 0.847000002861023,
+      "self_accuracy_on_eval_subset": 0.847000002861023
+    },
+    "regmean_hidden_layers": {
+      "symmetric_kl_to_centralized": 1.1440925598144531,
+      "prediction_agreement_to_centralized": 0.847000002861023,
+      "self_accuracy_on_eval_subset": 0.847000002861023
+    },
+    "regmean_hidden_layers_last_layer_tune": {
+      "symmetric_kl_to_centralized": 0.9227225184440613,
+      "prediction_agreement_to_centralized": 0.875,
+      "self_accuracy_on_eval_subset": 0.875
+    },
+    "regmean_hidden_layers_hidden_head_tune": {
+      "symmetric_kl_to_centralized": 0.8645160794258118,
+      "prediction_agreement_to_centralized": 0.8859999775886536,
+      "self_accuracy_on_eval_subset": 0.8859999775886536
+    },
+    "centralized": {
+      "symmetric_kl_to_centralized": 0.0,
+      "prediction_agreement_to_centralized": 1.0,
+      "self_accuracy_on_eval_subset": 0.996999979019165
+    }
+  }
+}

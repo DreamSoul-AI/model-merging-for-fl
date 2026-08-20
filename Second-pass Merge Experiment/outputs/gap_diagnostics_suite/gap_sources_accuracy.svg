@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+.axis { stroke: #6b7280; stroke-width: 1; }
+.grid { stroke: #e5e7eb; stroke-width: 1; }
+.label { font-size: 12px; }
+.title { font-size: 20px; font-weight: 600; }
+</style>
+<text x="90" y="30" class="title">Gap source interventions accuracy</text>
+<line x1="90" y1="410.0" x2="950" y2="410.0" class="grid" />
+<text x="80" y="414.0" text-anchor="end" class="label">-0.010</text>
+<line x1="90" y1="322.5" x2="950" y2="322.5" class="grid" />
+<text x="80" y="326.5" text-anchor="end" class="label">-0.005</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="grid" />
+<text x="80" y="239.0" text-anchor="end" class="label">+0.000</text>
+<line x1="90" y1="147.5" x2="950" y2="147.5" class="grid" />
+<text x="80" y="151.5" text-anchor="end" class="label">+0.005</text>
+<line x1="90" y1="60.0" x2="950" y2="60.0" class="grid" />
+<text x="80" y="64.0" text-anchor="end" class="label">+0.010</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="axis" />
+<line x1="90" y1="60" x2="90" y2="410" class="axis" />
+<rect x="105.9" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="123.1" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="123.1" y="475" text-anchor="end" transform="rotate(-25 123.1,475)" class="label">simple_avg</text>
+<rect x="172.0" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="189.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="189.2" y="475" text-anchor="end" transform="rotate(-25 189.2,475)" class="label">simple_avg_bias_cal</text>
+<rect x="238.2" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="255.4" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="255.4" y="475" text-anchor="end" transform="rotate(-25 255.4,475)" class="label">simple_avg_ridge_head</text>
+<rect x="304.3" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="321.5" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="321.5" y="475" text-anchor="end" transform="rotate(-25 321.5,475)" class="label">simple_avg_short_tune</text>
+<rect x="370.5" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="387.7" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="387.7" y="475" text-anchor="end" transform="rotate(-25 387.7,475)" class="label">regmean_equal</text>
+<rect x="436.6" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="453.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="453.8" y="475" text-anchor="end" transform="rotate(-25 453.8,475)" class="label">regmean_equal_bias_cal</text>
+<rect x="502.8" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="520.0" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="520.0" y="475" text-anchor="end" transform="rotate(-25 520.0,475)" class="label">regmean_equal_ridge_head</text>
+<rect x="569.0" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="586.2" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="586.2" y="475" text-anchor="end" transform="rotate(-25 586.2,475)" class="label">regmean_equal_short_tune</text>
+<rect x="635.1" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="652.3" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="652.3" y="475" text-anchor="end" transform="rotate(-25 652.3,475)" class="label">sample_weighted_avg</text>
+<rect x="701.3" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="718.5" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="718.5" y="475" text-anchor="end" transform="rotate(-25 718.5,475)" class="label">sample_weighted_avg_bias_cal</text>
+<rect x="767.4" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="784.6" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="784.6" y="475" text-anchor="end" transform="rotate(-25 784.6,475)" class="label">sample_weighted_avg_ridge_head</text>
+<rect x="833.6" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="850.8" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="850.8" y="475" text-anchor="end" transform="rotate(-25 850.8,475)" class="label">sample_weighted_avg_short_tune</text>
+<rect x="899.7" y="235.0" width="34.4" height="0.0" fill="#059669" rx="2" />
+<text x="916.9" y="229.0" text-anchor="middle" class="label">+0.0000</text>
+<text x="916.9" y="475" text-anchor="end" transform="rotate(-25 916.9,475)" class="label">centralized</text>
+<text x="20" y="235.0" transform="rotate(-90 20,235.0)" class="label">Accuracy</text>
+</svg>

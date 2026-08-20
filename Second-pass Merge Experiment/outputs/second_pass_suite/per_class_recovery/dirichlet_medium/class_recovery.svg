@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+.axis { stroke: #6b7280; stroke-width: 1; }
+.grid { stroke: #e5e7eb; stroke-width: 1; }
+.label { font-size: 12px; }
+.title { font-size: 20px; font-weight: 600; }
+</style>
+<text x="90" y="30" class="title">per_class_recovery class recovery</text>
+<line x1="90" y1="410.0" x2="950" y2="410.0" class="grid" />
+<text x="80" y="414.0" text-anchor="end" class="label">-0.207</text>
+<line x1="90" y1="322.5" x2="950" y2="322.5" class="grid" />
+<text x="80" y="326.5" text-anchor="end" class="label">-0.103</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="grid" />
+<text x="80" y="239.0" text-anchor="end" class="label">+0.000</text>
+<line x1="90" y1="147.5" x2="950" y2="147.5" class="grid" />
+<text x="80" y="151.5" text-anchor="end" class="label">+0.104</text>
+<line x1="90" y1="60.0" x2="950" y2="60.0" class="grid" />
+<text x="80" y="64.0" text-anchor="end" class="label">+0.207</text>
+<line x1="90" y1="235.0" x2="950" y2="235.0" class="axis" />
+<line x1="90" y1="60" x2="90" y2="410" class="axis" />
+<rect x="110.6" y="147.0" width="44.7" height="88.0" fill="#059669" rx="2" />
+<text x="133.0" y="141.0" text-anchor="middle" class="label">+0.1041</text>
+<text x="133.0" y="475" text-anchor="end" transform="rotate(-25 133.0,475)" class="label">class_0_acc</text>
+<rect x="196.6" y="235.0" width="44.7" height="17.9" fill="#dc2626" rx="2" />
+<text x="219.0" y="268.9" text-anchor="middle" class="label">-0.0211</text>
+<text x="219.0" y="475" text-anchor="end" transform="rotate(-25 219.0,475)" class="label">class_1_acc</text>
+<rect x="282.6" y="235.0" width="44.7" height="48.3" fill="#dc2626" rx="2" />
+<text x="305.0" y="299.3" text-anchor="middle" class="label">-0.0572</text>
+<text x="305.0" y="475" text-anchor="end" transform="rotate(-25 305.0,475)" class="label">class_2_acc</text>
+<rect x="368.6" y="168.0" width="44.7" height="67.0" fill="#059669" rx="2" />
+<text x="391.0" y="162.0" text-anchor="middle" class="label">+0.0792</text>
+<text x="391.0" y="475" text-anchor="end" transform="rotate(-25 391.0,475)" class="label">class_3_acc</text>
+<rect x="454.6" y="235.0" width="44.7" height="18.1" fill="#dc2626" rx="2" />
+<text x="477.0" y="269.1" text-anchor="middle" class="label">-0.0214</text>
+<text x="477.0" y="475" text-anchor="end" transform="rotate(-25 477.0,475)" class="label">class_4_acc</text>
+<rect x="540.6" y="78.6" width="44.7" height="156.4" fill="#059669" rx="2" />
+<text x="563.0" y="72.6" text-anchor="middle" class="label">+0.1850</text>
+<text x="563.0" y="475" text-anchor="end" transform="rotate(-25 563.0,475)" class="label">class_5_acc</text>
+<rect x="626.6" y="235.0" width="44.7" height="20.3" fill="#dc2626" rx="2" />
+<text x="649.0" y="271.3" text-anchor="middle" class="label">-0.0240</text>
+<text x="649.0" y="475" text-anchor="end" transform="rotate(-25 649.0,475)" class="label">class_6_acc</text>
+<rect x="712.6" y="77.9" width="44.7" height="157.1" fill="#059669" rx="2" />
+<text x="735.0" y="71.9" text-anchor="middle" class="label">+0.1858</text>
+<text x="735.0" y="475" text-anchor="end" transform="rotate(-25 735.0,475)" class="label">class_7_acc</text>
+<rect x="798.6" y="212.4" width="44.7" height="22.6" fill="#059669" rx="2" />
+<text x="821.0" y="206.4" text-anchor="middle" class="label">+0.0267</text>
+<text x="821.0" y="475" text-anchor="end" transform="rotate(-25 821.0,475)" class="label">class_8_acc</text>
+<rect x="884.6" y="60.7" width="44.7" height="174.3" fill="#059669" rx="2" />
+<text x="907.0" y="54.7" text-anchor="middle" class="label">+0.2061</text>
+<text x="907.0" y="475" text-anchor="end" transform="rotate(-25 907.0,475)" class="label">class_9_acc</text>
+<text x="20" y="235.0" transform="rotate(-90 20,235.0)" class="label">RegMean - simple</text>
+</svg>

@@ -1,0 +1,1618 @@
+{
+  "config": {
+    "data_root": "work/data",
+    "device": "cpu",
+    "seed": 7,
+    "num_clients": 10,
+    "train_batch_size": 128,
+    "eval_batch_size": 512,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "hidden_sizes": [
+      128,
+      128
+    ],
+    "split_mode": "dirichlet",
+    "dirichlet_alpha": 0.5,
+    "pathological_classes_per_client": 2,
+    "calibration_size": 256,
+    "regmean_lambda": 0.001,
+    "client_epochs": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      15,
+      20,
+      30,
+      50
+    ],
+    "centralized_epochs": 10,
+    "post_merge_steps": 50,
+    "post_merge_lr": 0.0005
+  },
+  "settings": {
+    "5shot_per_class": {
+      "calibration_per_class": 5,
+      "merges": {
+        "sample_weighted_avg": {
+          "global": {
+            "loss": 0.49189385986328127,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_bias_cal": {
+          "global": {
+            "loss": 0.4662768356323242,
+            "accuracy": 0.8742,
+            "macro_accuracy": 0.8712368620213354,
+            "worst_class_accuracy": 0.6603139013452914,
+            "class_0_acc": 0.9408163265306122,
+            "class_1_acc": 0.9770925110132158,
+            "class_2_acc": 0.9534883720930233,
+            "class_3_acc": 0.8762376237623762,
+            "class_4_acc": 0.945010183299389,
+            "class_5_acc": 0.6603139013452914,
+            "class_6_acc": 0.9634655532359081,
+            "class_7_acc": 0.7762645914396887,
+            "class_8_acc": 0.864476386036961,
+            "class_9_acc": 0.755203171456888
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9094320313832509,
+            "client_1_local_acc": 0.8756302521008403,
+            "client_2_local_acc": 0.7776666666666666,
+            "client_3_local_acc": 0.8471518043543096,
+            "client_4_local_acc": 0.8783987041536504,
+            "client_5_local_acc": 0.9047237790232185,
+            "client_6_local_acc": 0.9012152097216778,
+            "client_7_local_acc": 0.839434628975265,
+            "client_8_local_acc": 0.9495953757225434,
+            "client_9_local_acc": 0.8947478551998326
+          }
+        },
+        "sample_weighted_temperature": {
+          "global": {
+            "loss": 0.4515335380554199,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_vector_scaling": {
+          "global": {
+            "loss": 0.3839607162475586,
+            "accuracy": 0.8908,
+            "macro_accuracy": 0.8890313315911669,
+            "worst_class_accuracy": 0.8004484304932735,
+            "class_0_acc": 0.9510204081632653,
+            "class_1_acc": 0.986784140969163,
+            "class_2_acc": 0.8711240310077519,
+            "class_3_acc": 0.8732673267326733,
+            "class_4_acc": 0.9287169042769857,
+            "class_5_acc": 0.8004484304932735,
+            "class_6_acc": 0.9749478079331941,
+            "class_7_acc": 0.8715953307392996,
+            "class_8_acc": 0.8028747433264887,
+            "class_9_acc": 0.8295341922695738
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9010745352208767,
+            "client_1_local_acc": 0.8897058823529411,
+            "client_2_local_acc": 0.8228888888888889,
+            "client_3_local_acc": 0.8610199821055771,
+            "client_4_local_acc": 0.9147286821705426,
+            "client_5_local_acc": 0.9004536962903656,
+            "client_6_local_acc": 0.9198353586828695,
+            "client_7_local_acc": 0.8901766784452296,
+            "client_8_local_acc": 0.9232369942196532,
+            "client_9_local_acc": 0.883448420171584
+          }
+        },
+        "sample_weighted_last_layer_tune": {
+          "global": {
+            "loss": 0.39812724685668943,
+            "accuracy": 0.9022,
+            "macro_accuracy": 0.8998388069017516,
+            "worst_class_accuracy": 0.7511210762331838,
+            "class_0_acc": 0.9673469387755103,
+            "class_1_acc": 0.9797356828193833,
+            "class_2_acc": 0.9186046511627907,
+            "class_3_acc": 0.9326732673267327,
+            "class_4_acc": 0.9205702647657841,
+            "class_5_acc": 0.7511210762331838,
+            "class_6_acc": 0.9676409185803758,
+            "class_7_acc": 0.8764591439688716,
+            "class_8_acc": 0.839835728952772,
+            "class_9_acc": 0.844400396432111
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9200068224458469,
+            "client_1_local_acc": 0.9065126050420168,
+            "client_2_local_acc": 0.8288888888888889,
+            "client_3_local_acc": 0.8804056069191769,
+            "client_4_local_acc": 0.9139187782020132,
+            "client_5_local_acc": 0.9084601014144649,
+            "client_6_local_acc": 0.9249313994511956,
+            "client_7_local_acc": 0.9036042402826855,
+            "client_8_local_acc": 0.9345664739884393,
+            "client_9_local_acc": 0.9058380414312618
+          }
+        },
+        "sample_weighted_hidden_head_tune": {
+          "global": {
+            "loss": 0.35436049880981446,
+            "accuracy": 0.9108,
+            "macro_accuracy": 0.9095524725761182,
+            "worst_class_accuracy": 0.8475336322869955,
+            "class_0_acc": 0.9816326530612245,
+            "class_1_acc": 0.9841409691629956,
+            "class_2_acc": 0.875,
+            "class_3_acc": 0.8673267326732673,
+            "class_4_acc": 0.924643584521385,
+            "class_5_acc": 0.8475336322869955,
+            "class_6_acc": 0.9384133611691023,
+            "class_7_acc": 0.8803501945525292,
+            "class_8_acc": 0.8757700205338809,
+            "class_9_acc": 0.9207135777998018
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9183012109841379,
+            "client_1_local_acc": 0.909453781512605,
+            "client_2_local_acc": 0.8716666666666667,
+            "client_3_local_acc": 0.9020280345958843,
+            "client_4_local_acc": 0.9208608122179799,
+            "client_5_local_acc": 0.9204697091006139,
+            "client_6_local_acc": 0.9402195217561741,
+            "client_7_local_acc": 0.9002120141342757,
+            "client_8_local_acc": 0.9135260115606937,
+            "client_9_local_acc": 0.8895166352793471
+          }
+        },
+        "regmean_hidden_layers": {
+          "global": {
+            "loss": 0.44229861526489256,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_bias_cal": {
+          "global": {
+            "loss": 0.42864887313842776,
+            "accuracy": 0.873,
+            "macro_accuracy": 0.8707643159887402,
+            "worst_class_accuracy": 0.7174887892376681,
+            "class_0_acc": 0.9469387755102041,
+            "class_1_acc": 0.947136563876652,
+            "class_2_acc": 0.9166666666666666,
+            "class_3_acc": 0.8415841584158416,
+            "class_4_acc": 0.9521384928716904,
+            "class_5_acc": 0.7174887892376681,
+            "class_6_acc": 0.9405010438413361,
+            "class_7_acc": 0.8560311284046692,
+            "class_8_acc": 0.813141683778234,
+            "class_9_acc": 0.77601585728444
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9017567798055602,
+            "client_1_local_acc": 0.867436974789916,
+            "client_2_local_acc": 0.79,
+            "client_3_local_acc": 0.8379063525201312,
+            "client_4_local_acc": 0.8854564387365498,
+            "client_5_local_acc": 0.8908460101414465,
+            "client_6_local_acc": 0.9033712269698158,
+            "client_7_local_acc": 0.8742049469964664,
+            "client_8_local_acc": 0.9290173410404624,
+            "client_9_local_acc": 0.8863779033270559
+          }
+        },
+        "regmean_hidden_layers_temperature": {
+          "global": {
+            "loss": 0.43532203674316405,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_vector_scaling": {
+          "global": {
+            "loss": 0.512050643157959,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.858081185906412,
+            "worst_class_accuracy": 0.7433264887063655,
+            "class_0_acc": 0.8918367346938776,
+            "class_1_acc": 0.9832599118942731,
+            "class_2_acc": 0.7974806201550387,
+            "class_3_acc": 0.7772277227722773,
+            "class_4_acc": 0.9348268839103869,
+            "class_5_acc": 0.7993273542600897,
+            "class_6_acc": 0.964509394572025,
+            "class_7_acc": 0.8832684824902723,
+            "class_8_acc": 0.7433264887063655,
+            "class_9_acc": 0.8057482656095144
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.86389220535562,
+            "client_1_local_acc": 0.857563025210084,
+            "client_2_local_acc": 0.7873333333333333,
+            "client_3_local_acc": 0.8235908141962421,
+            "client_4_local_acc": 0.9015388175402059,
+            "client_5_local_acc": 0.8710968775020016,
+            "client_6_local_acc": 0.8878871030968247,
+            "client_7_local_acc": 0.8749116607773851,
+            "client_8_local_acc": 0.9010404624277457,
+            "client_9_local_acc": 0.8528980958359489
+          }
+        },
+        "regmean_hidden_layers_last_layer_tune": {
+          "global": {
+            "loss": 0.4063464973449707,
+            "accuracy": 0.8775,
+            "macro_accuracy": 0.8753468956318159,
+            "worst_class_accuracy": 0.765695067264574,
+            "class_0_acc": 0.9306122448979591,
+            "class_1_acc": 0.9700440528634361,
+            "class_2_acc": 0.875,
+            "class_3_acc": 0.8900990099009901,
+            "class_4_acc": 0.9358452138492872,
+            "class_5_acc": 0.765695067264574,
+            "class_6_acc": 0.9519832985386222,
+            "class_7_acc": 0.8813229571984436,
+            "class_8_acc": 0.7669404517453798,
+            "class_9_acc": 0.7859266600594648
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.897151628858946,
+            "client_1_local_acc": 0.875,
+            "client_2_local_acc": 0.8092222222222222,
+            "client_3_local_acc": 0.8396957948106174,
+            "client_4_local_acc": 0.8993405067684832,
+            "client_5_local_acc": 0.8865759274085936,
+            "client_6_local_acc": 0.904155233241866,
+            "client_7_local_acc": 0.8904593639575972,
+            "client_8_local_acc": 0.9193063583815029,
+            "client_9_local_acc": 0.8930738648252773
+          }
+        },
+        "regmean_hidden_layers_hidden_head_tune": {
+          "global": {
+            "loss": 0.36956687850952147,
+            "accuracy": 0.8906,
+            "macro_accuracy": 0.8895950631091857,
+            "worst_class_accuracy": 0.8340807174887892,
+            "class_0_acc": 0.9724489795918367,
+            "class_1_acc": 0.947136563876652,
+            "class_2_acc": 0.8585271317829457,
+            "class_3_acc": 0.8435643564356435,
+            "class_4_acc": 0.9012219959266803,
+            "class_5_acc": 0.8340807174887892,
+            "class_6_acc": 0.9081419624217119,
+            "class_7_acc": 0.8910505836575876,
+            "class_8_acc": 0.8696098562628337,
+            "class_9_acc": 0.8701684836471755
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.900562851782364,
+            "client_1_local_acc": 0.8922268907563026,
+            "client_2_local_acc": 0.8572222222222222,
+            "client_3_local_acc": 0.8717566358484938,
+            "client_4_local_acc": 0.8996876084692815,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.9172873382987063,
+            "client_7_local_acc": 0.893286219081272,
+            "client_8_local_acc": 0.8908670520231214,
+            "client_9_local_acc": 0.8683825068005859
+          }
+        },
+        "centralized": {
+          "global": {
+            "loss": 0.08252302122116088,
+            "accuracy": 0.9751,
+            "macro_accuracy": 0.9750614776539521,
+            "worst_class_accuracy": 0.9602713178294574,
+            "class_0_acc": 0.9897959183673469,
+            "class_1_acc": 0.9876651982378855,
+            "class_2_acc": 0.9602713178294574,
+            "class_3_acc": 0.9782178217821782,
+            "class_4_acc": 0.9826883910386965,
+            "class_5_acc": 0.976457399103139,
+            "class_6_acc": 0.9791231732776617,
+            "class_7_acc": 0.9620622568093385,
+            "class_8_acc": 0.9640657084188912,
+            "class_9_acc": 0.9702675916749257
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.996588777076582,
+            "client_1_local_acc": 0.9911764705882353,
+            "client_2_local_acc": 0.9947777777777778,
+            "client_3_local_acc": 0.9912019087384432,
+            "client_4_local_acc": 0.9960661807242855,
+            "client_5_local_acc": 0.9962636776087537,
+            "client_6_local_acc": 0.9960799686397491,
+            "client_7_local_acc": 0.992791519434629,
+            "client_8_local_acc": 0.9932947976878612,
+            "client_9_local_acc": 0.9926762921113204
+          }
+        }
+      }
+    },
+    "10shot_per_class": {
+      "calibration_per_class": 10,
+      "merges": {
+        "sample_weighted_avg": {
+          "global": {
+            "loss": 0.49189385986328127,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_bias_cal": {
+          "global": {
+            "loss": 0.4643704788208008,
+            "accuracy": 0.8746,
+            "macro_accuracy": 0.8716250594070342,
+            "worst_class_accuracy": 0.6591928251121076,
+            "class_0_acc": 0.9438775510204082,
+            "class_1_acc": 0.9762114537444934,
+            "class_2_acc": 0.9554263565891473,
+            "class_3_acc": 0.8762376237623762,
+            "class_4_acc": 0.9521384928716904,
+            "class_5_acc": 0.6591928251121076,
+            "class_6_acc": 0.9551148225469729,
+            "class_7_acc": 0.7752918287937743,
+            "class_8_acc": 0.8675564681724846,
+            "class_9_acc": 0.755203171456888
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9114787651373017,
+            "client_1_local_acc": 0.8752100840336134,
+            "client_2_local_acc": 0.7813333333333333,
+            "client_3_local_acc": 0.8489412466447958,
+            "client_4_local_acc": 0.8767788962165914,
+            "client_5_local_acc": 0.9073925807312516,
+            "client_6_local_acc": 0.9023912191297531,
+            "client_7_local_acc": 0.84,
+            "client_8_local_acc": 0.9489017341040462,
+            "client_9_local_acc": 0.8972588407616656
+          }
+        },
+        "sample_weighted_temperature": {
+          "global": {
+            "loss": 0.4897707168579102,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_vector_scaling": {
+          "global": {
+            "loss": 0.36394669494628906,
+            "accuracy": 0.8988,
+            "macro_accuracy": 0.8970623141120676,
+            "worst_class_accuracy": 0.7701793721973094,
+            "class_0_acc": 0.9714285714285714,
+            "class_1_acc": 0.9797356828193833,
+            "class_2_acc": 0.8207364341085271,
+            "class_3_acc": 0.9405940594059405,
+            "class_4_acc": 0.9460285132382892,
+            "class_5_acc": 0.7701793721973094,
+            "class_6_acc": 0.9519832985386222,
+            "class_7_acc": 0.8842412451361867,
+            "class_8_acc": 0.8870636550308009,
+            "class_9_acc": 0.8186323092170465
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9276820740235374,
+            "client_1_local_acc": 0.9140756302521008,
+            "client_2_local_acc": 0.8467777777777777,
+            "client_3_local_acc": 0.8634059051595586,
+            "client_4_local_acc": 0.912993173666551,
+            "client_5_local_acc": 0.9036562583400053,
+            "client_6_local_acc": 0.9141513132105057,
+            "client_7_local_acc": 0.895547703180212,
+            "client_8_local_acc": 0.9089017341040463,
+            "client_9_local_acc": 0.9062565390249006
+          }
+        },
+        "sample_weighted_last_layer_tune": {
+          "global": {
+            "loss": 0.3820326469421387,
+            "accuracy": 0.91,
+            "macro_accuracy": 0.9081940850543454,
+            "worst_class_accuracy": 0.7937219730941704,
+            "class_0_acc": 0.9724489795918367,
+            "class_1_acc": 0.9814977973568282,
+            "class_2_acc": 0.9001937984496124,
+            "class_3_acc": 0.9257425742574258,
+            "class_4_acc": 0.9470468431771895,
+            "class_5_acc": 0.7937219730941704,
+            "class_6_acc": 0.9342379958246346,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.8909811694747275
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9242708511001194,
+            "client_1_local_acc": 0.9098739495798319,
+            "client_2_local_acc": 0.8568888888888889,
+            "client_3_local_acc": 0.898449150014912,
+            "client_4_local_acc": 0.9117204674302904,
+            "client_5_local_acc": 0.9226047504670403,
+            "client_6_local_acc": 0.9341434731477852,
+            "client_7_local_acc": 0.8937102473498233,
+            "client_8_local_acc": 0.9239306358381503,
+            "client_9_local_acc": 0.9139987445072191
+          }
+        },
+        "sample_weighted_hidden_head_tune": {
+          "global": {
+            "loss": 0.3469250419616699,
+            "accuracy": 0.9103,
+            "macro_accuracy": 0.9086798107624275,
+            "worst_class_accuracy": 0.8352017937219731,
+            "class_0_acc": 0.9795918367346939,
+            "class_1_acc": 0.9859030837004406,
+            "class_2_acc": 0.8963178294573644,
+            "class_3_acc": 0.9099009900990099,
+            "class_4_acc": 0.9032586558044806,
+            "class_5_acc": 0.8352017937219731,
+            "class_6_acc": 0.9217118997912317,
+            "class_7_acc": 0.867704280155642,
+            "class_8_acc": 0.8655030800821355,
+            "class_9_acc": 0.9217046580773043
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.921541872761385,
+            "client_1_local_acc": 0.9123949579831933,
+            "client_2_local_acc": 0.8726666666666667,
+            "client_3_local_acc": 0.9015806740232627,
+            "client_4_local_acc": 0.9141501793358787,
+            "client_5_local_acc": 0.9207365892714171,
+            "client_6_local_acc": 0.9396315170521364,
+            "client_7_local_acc": 0.8999293286219081,
+            "client_8_local_acc": 0.9149132947976879,
+            "client_9_local_acc": 0.8980958359489433
+          }
+        },
+        "regmean_hidden_layers": {
+          "global": {
+            "loss": 0.44229861526489256,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_bias_cal": {
+          "global": {
+            "loss": 0.4279349433898926,
+            "accuracy": 0.8733,
+            "macro_accuracy": 0.8710376172132582,
+            "worst_class_accuracy": 0.7040358744394619,
+            "class_0_acc": 0.9540816326530612,
+            "class_1_acc": 0.9400881057268723,
+            "class_2_acc": 0.9186046511627907,
+            "class_3_acc": 0.8435643564356435,
+            "class_4_acc": 0.9511201629327902,
+            "class_5_acc": 0.7040358744394619,
+            "class_6_acc": 0.9311064718162839,
+            "class_7_acc": 0.857976653696498,
+            "class_8_acc": 0.8367556468172485,
+            "class_9_acc": 0.7730426164519326
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9056796861674911,
+            "client_1_local_acc": 0.8701680672268908,
+            "client_2_local_acc": 0.7943333333333333,
+            "client_3_local_acc": 0.8389501938562481,
+            "client_4_local_acc": 0.8829110262640287,
+            "client_5_local_acc": 0.8940485721910862,
+            "client_6_local_acc": 0.9021952175617405,
+            "client_7_local_acc": 0.8734982332155476,
+            "client_8_local_acc": 0.9248554913294798,
+            "client_9_local_acc": 0.8872148985143335
+          }
+        },
+        "regmean_hidden_layers_temperature": {
+          "global": {
+            "loss": 0.4638148483276367,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_vector_scaling": {
+          "global": {
+            "loss": 0.40307058486938474,
+            "accuracy": 0.8806,
+            "macro_accuracy": 0.8787424428739266,
+            "worst_class_accuracy": 0.7354260089686099,
+            "class_0_acc": 0.9734693877551021,
+            "class_1_acc": 0.9462555066079296,
+            "class_2_acc": 0.8158914728682171,
+            "class_3_acc": 0.9108910891089109,
+            "class_4_acc": 0.9236252545824847,
+            "class_5_acc": 0.7354260089686099,
+            "class_6_acc": 0.9227557411273486,
+            "class_7_acc": 0.8667315175097277,
+            "class_8_acc": 0.8459958932238193,
+            "class_9_acc": 0.846382556987116
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9107965205526181,
+            "client_1_local_acc": 0.8886554621848739,
+            "client_2_local_acc": 0.8252222222222222,
+            "client_3_local_acc": 0.8611691022964509,
+            "client_4_local_acc": 0.8943653823903737,
+            "client_5_local_acc": 0.8828396050173473,
+            "client_6_local_acc": 0.9108192865542925,
+            "client_7_local_acc": 0.8863604240282685,
+            "client_8_local_acc": 0.8901734104046243,
+            "client_9_local_acc": 0.8865871521238753
+          }
+        },
+        "regmean_hidden_layers_last_layer_tune": {
+          "global": {
+            "loss": 0.37598487091064453,
+            "accuracy": 0.8883,
+            "macro_accuracy": 0.8866337734172929,
+            "worst_class_accuracy": 0.7869955156950673,
+            "class_0_acc": 0.9693877551020408,
+            "class_1_acc": 0.9515418502202643,
+            "class_2_acc": 0.873062015503876,
+            "class_3_acc": 0.904950495049505,
+            "class_4_acc": 0.9205702647657841,
+            "class_5_acc": 0.7869955156950673,
+            "class_6_acc": 0.9164926931106472,
+            "class_7_acc": 0.8638132295719845,
+            "class_8_acc": 0.8182751540041068,
+            "class_9_acc": 0.8612487611496531
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9090909090909091,
+            "client_1_local_acc": 0.8869747899159663,
+            "client_2_local_acc": 0.8335555555555556,
+            "client_3_local_acc": 0.8745899194750969,
+            "client_4_local_acc": 0.8943653823903737,
+            "client_5_local_acc": 0.900720576461169,
+            "client_6_local_acc": 0.9219913759310074,
+            "client_7_local_acc": 0.8890459363957597,
+            "client_8_local_acc": 0.9021965317919075,
+            "client_9_local_acc": 0.8903536304666249
+          }
+        },
+        "regmean_hidden_layers_hidden_head_tune": {
+          "global": {
+            "loss": 0.37644916076660156,
+            "accuracy": 0.8904,
+            "macro_accuracy": 0.8890572061602879,
+            "worst_class_accuracy": 0.8223819301848049,
+            "class_0_acc": 0.9775510204081632,
+            "class_1_acc": 0.9612334801762115,
+            "class_2_acc": 0.8701550387596899,
+            "class_3_acc": 0.8910891089108911,
+            "class_4_acc": 0.9175152749490835,
+            "class_5_acc": 0.82847533632287,
+            "class_6_acc": 0.9008350730688935,
+            "class_7_acc": 0.8511673151750972,
+            "class_8_acc": 0.8223819301848049,
+            "class_9_acc": 0.8701684836471755
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9097731536755927,
+            "client_1_local_acc": 0.884453781512605,
+            "client_2_local_acc": 0.8486666666666667,
+            "client_3_local_acc": 0.8729495973754846,
+            "client_4_local_acc": 0.8919356704847854,
+            "client_5_local_acc": 0.9015212169735789,
+            "client_6_local_acc": 0.9261074088592709,
+            "client_7_local_acc": 0.8787279151943463,
+            "client_8_local_acc": 0.8998843930635838,
+            "client_9_local_acc": 0.8878426449047918
+          }
+        },
+        "centralized": {
+          "global": {
+            "loss": 0.08252302122116088,
+            "accuracy": 0.9751,
+            "macro_accuracy": 0.9750614776539521,
+            "worst_class_accuracy": 0.9602713178294574,
+            "class_0_acc": 0.9897959183673469,
+            "class_1_acc": 0.9876651982378855,
+            "class_2_acc": 0.9602713178294574,
+            "class_3_acc": 0.9782178217821782,
+            "class_4_acc": 0.9826883910386965,
+            "class_5_acc": 0.976457399103139,
+            "class_6_acc": 0.9791231732776617,
+            "class_7_acc": 0.9620622568093385,
+            "class_8_acc": 0.9640657084188912,
+            "class_9_acc": 0.9702675916749257
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.996588777076582,
+            "client_1_local_acc": 0.9911764705882353,
+            "client_2_local_acc": 0.9947777777777778,
+            "client_3_local_acc": 0.9912019087384432,
+            "client_4_local_acc": 0.9960661807242855,
+            "client_5_local_acc": 0.9962636776087537,
+            "client_6_local_acc": 0.9960799686397491,
+            "client_7_local_acc": 0.992791519434629,
+            "client_8_local_acc": 0.9932947976878612,
+            "client_9_local_acc": 0.9926762921113204
+          }
+        }
+      }
+    },
+    "20shot_per_class": {
+      "calibration_per_class": 20,
+      "merges": {
+        "sample_weighted_avg": {
+          "global": {
+            "loss": 0.49189385986328127,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_bias_cal": {
+          "global": {
+            "loss": 0.46457627410888674,
+            "accuracy": 0.8754,
+            "macro_accuracy": 0.8726187103775136,
+            "worst_class_accuracy": 0.6748878923766816,
+            "class_0_acc": 0.9438775510204082,
+            "class_1_acc": 0.9753303964757709,
+            "class_2_acc": 0.9563953488372093,
+            "class_3_acc": 0.8603960396039604,
+            "class_4_acc": 0.9521384928716904,
+            "class_5_acc": 0.6748878923766816,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7830739299610895,
+            "class_8_acc": 0.8726899383983573,
+            "class_9_acc": 0.7512388503468781
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9094320313832509,
+            "client_1_local_acc": 0.8728991596638656,
+            "client_2_local_acc": 0.785,
+            "client_3_local_acc": 0.8481956456904265,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.9071257005604484,
+            "client_6_local_acc": 0.9025872206977655,
+            "client_7_local_acc": 0.8398586572438163,
+            "client_8_local_acc": 0.9500578034682081,
+            "client_9_local_acc": 0.8922368696379995
+          }
+        },
+        "sample_weighted_temperature": {
+          "global": {
+            "loss": 0.4628077682495117,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_vector_scaling": {
+          "global": {
+            "loss": 0.33228234100341797,
+            "accuracy": 0.9066,
+            "macro_accuracy": 0.9045914034989873,
+            "worst_class_accuracy": 0.7858744394618834,
+            "class_0_acc": 0.9785714285714285,
+            "class_1_acc": 0.9814977973568282,
+            "class_2_acc": 0.9224806201550387,
+            "class_3_acc": 0.9138613861386139,
+            "class_4_acc": 0.8971486761710794,
+            "class_5_acc": 0.7858744394618834,
+            "class_6_acc": 0.9457202505219207,
+            "class_7_acc": 0.8657587548638133,
+            "class_8_acc": 0.8798767967145791,
+            "class_9_acc": 0.8751238850346879
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9164250383762579,
+            "client_1_local_acc": 0.9092436974789916,
+            "client_2_local_acc": 0.8531111111111112,
+            "client_3_local_acc": 0.8911422606620937,
+            "client_4_local_acc": 0.9098692583593659,
+            "client_5_local_acc": 0.9124633039765145,
+            "client_6_local_acc": 0.9313994511956095,
+            "client_7_local_acc": 0.8958303886925795,
+            "client_8_local_acc": 0.9285549132947977,
+            "client_9_local_acc": 0.8918183720443608
+          }
+        },
+        "sample_weighted_last_layer_tune": {
+          "global": {
+            "loss": 0.38192298583984374,
+            "accuracy": 0.9084,
+            "macro_accuracy": 0.9065973672572536,
+            "worst_class_accuracy": 0.804932735426009,
+            "class_0_acc": 0.9714285714285714,
+            "class_1_acc": 0.9797356828193833,
+            "class_2_acc": 0.935077519379845,
+            "class_3_acc": 0.8930693069306931,
+            "class_4_acc": 0.9226069246435845,
+            "class_5_acc": 0.804932735426009,
+            "class_6_acc": 0.9457202505219207,
+            "class_7_acc": 0.8501945525291829,
+            "class_8_acc": 0.8593429158110883,
+            "class_9_acc": 0.9038652130822596
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9177895275456252,
+            "client_1_local_acc": 0.9058823529411765,
+            "client_2_local_acc": 0.858,
+            "client_3_local_acc": 0.9017297942141366,
+            "client_4_local_acc": 0.9151914844382737,
+            "client_5_local_acc": 0.9244729116626634,
+            "client_6_local_acc": 0.9388475107800862,
+            "client_7_local_acc": 0.8904593639575972,
+            "client_8_local_acc": 0.9336416184971098,
+            "client_9_local_acc": 0.8966310943712074
+          }
+        },
+        "sample_weighted_hidden_head_tune": {
+          "global": {
+            "loss": 0.350470051574707,
+            "accuracy": 0.9116,
+            "macro_accuracy": 0.9106056669951107,
+            "worst_class_accuracy": 0.8534653465346534,
+            "class_0_acc": 0.9693877551020408,
+            "class_1_acc": 0.9770925110132158,
+            "class_2_acc": 0.8972868217054264,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9317718940936863,
+            "class_5_acc": 0.8654708520179372,
+            "class_6_acc": 0.9279749478079332,
+            "class_7_acc": 0.8667315175097277,
+            "class_8_acc": 0.8921971252566735,
+            "class_9_acc": 0.9246778989098117
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9135254988913526,
+            "client_1_local_acc": 0.9107142857142857,
+            "client_2_local_acc": 0.8805555555555555,
+            "client_3_local_acc": 0.9056069191768565,
+            "client_4_local_acc": 0.9205137105171816,
+            "client_5_local_acc": 0.9274085935414998,
+            "client_6_local_acc": 0.9378675029400235,
+            "client_7_local_acc": 0.8890459363957597,
+            "client_8_local_acc": 0.9174566473988439,
+            "client_9_local_acc": 0.8920276208411801
+          }
+        },
+        "regmean_hidden_layers": {
+          "global": {
+            "loss": 0.44229861526489256,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_bias_cal": {
+          "global": {
+            "loss": 0.42893182220458986,
+            "accuracy": 0.8735,
+            "macro_accuracy": 0.8713699400032817,
+            "worst_class_accuracy": 0.7219730941704036,
+            "class_0_acc": 0.9510204081632653,
+            "class_1_acc": 0.9436123348017621,
+            "class_2_acc": 0.9176356589147286,
+            "class_3_acc": 0.8376237623762376,
+            "class_4_acc": 0.9521384928716904,
+            "class_5_acc": 0.7219730941704036,
+            "class_6_acc": 0.9342379958246346,
+            "class_7_acc": 0.8521400778210116,
+            "class_8_acc": 0.8213552361396304,
+            "class_9_acc": 0.7819623389494549
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9029507078287566,
+            "client_1_local_acc": 0.8647058823529412,
+            "client_2_local_acc": 0.7936666666666666,
+            "client_3_local_acc": 0.8405905159558604,
+            "client_4_local_acc": 0.8833738285317598,
+            "client_5_local_acc": 0.8935148118494796,
+            "client_6_local_acc": 0.904547236377891,
+            "client_7_local_acc": 0.8702473498233215,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8870056497175142
+          }
+        },
+        "regmean_hidden_layers_temperature": {
+          "global": {
+            "loss": 0.43924391860961914,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_vector_scaling": {
+          "global": {
+            "loss": 0.39484440765380857,
+            "accuracy": 0.8864,
+            "macro_accuracy": 0.8853135947686613,
+            "worst_class_accuracy": 0.8307174887892377,
+            "class_0_acc": 0.9591836734693877,
+            "class_1_acc": 0.945374449339207,
+            "class_2_acc": 0.874031007751938,
+            "class_3_acc": 0.8683168316831683,
+            "class_4_acc": 0.8818737270875764,
+            "class_5_acc": 0.8307174887892377,
+            "class_6_acc": 0.9217118997912317,
+            "class_7_acc": 0.8589494163424124,
+            "class_8_acc": 0.839835728952772,
+            "class_9_acc": 0.8731417244796829
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.8916936721814771,
+            "client_1_local_acc": 0.8827731092436975,
+            "client_2_local_acc": 0.8467777777777777,
+            "client_3_local_acc": 0.8759320011929616,
+            "client_4_local_acc": 0.8907786648154576,
+            "client_5_local_acc": 0.8921804109954631,
+            "client_6_local_acc": 0.9200313602508821,
+            "client_7_local_acc": 0.8759010600706714,
+            "client_8_local_acc": 0.8984971098265896,
+            "client_9_local_acc": 0.8702657459719607
+          }
+        },
+        "regmean_hidden_layers_last_layer_tune": {
+          "global": {
+            "loss": 0.37389757995605466,
+            "accuracy": 0.8896,
+            "macro_accuracy": 0.888135838740784,
+            "worst_class_accuracy": 0.8094170403587444,
+            "class_0_acc": 0.9591836734693877,
+            "class_1_acc": 0.9550660792951542,
+            "class_2_acc": 0.8972868217054264,
+            "class_3_acc": 0.8693069306930693,
+            "class_4_acc": 0.9114052953156823,
+            "class_5_acc": 0.8094170403587444,
+            "class_6_acc": 0.9279749478079332,
+            "class_7_acc": 0.8511673151750972,
+            "class_8_acc": 0.824435318275154,
+            "class_9_acc": 0.8761149653121902
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9009039740747058,
+            "client_1_local_acc": 0.8810924369747899,
+            "client_2_local_acc": 0.8385555555555556,
+            "client_3_local_acc": 0.8807038473009245,
+            "client_4_local_acc": 0.8974892976975587,
+            "client_5_local_acc": 0.9033893781692021,
+            "client_6_local_acc": 0.9233633869070953,
+            "client_7_local_acc": 0.8790106007067138,
+            "client_8_local_acc": 0.9102890173410405,
+            "client_9_local_acc": 0.8863779033270559
+          }
+        },
+        "regmean_hidden_layers_hidden_head_tune": {
+          "global": {
+            "loss": 0.38745630950927734,
+            "accuracy": 0.883,
+            "macro_accuracy": 0.8823267856204942,
+            "worst_class_accuracy": 0.7950495049504951,
+            "class_0_acc": 0.9520408163265306,
+            "class_1_acc": 0.9462555066079296,
+            "class_2_acc": 0.876937984496124,
+            "class_3_acc": 0.7950495049504951,
+            "class_4_acc": 0.9195519348268839,
+            "class_5_acc": 0.8565022421524664,
+            "class_6_acc": 0.8935281837160751,
+            "class_7_acc": 0.830739299610895,
+            "class_8_acc": 0.8696098562628337,
+            "class_9_acc": 0.8830525272547076
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.8939109670816988,
+            "client_1_local_acc": 0.8794117647058823,
+            "client_2_local_acc": 0.861,
+            "client_3_local_acc": 0.8817476886370414,
+            "client_4_local_acc": 0.8889274557445331,
+            "client_5_local_acc": 0.9055244195356285,
+            "client_6_local_acc": 0.9163073304586437,
+            "client_7_local_acc": 0.856678445229682,
+            "client_8_local_acc": 0.8943352601156069,
+            "client_9_local_acc": 0.8675455116133082
+          }
+        },
+        "centralized": {
+          "global": {
+            "loss": 0.08252302122116088,
+            "accuracy": 0.9751,
+            "macro_accuracy": 0.9750614776539521,
+            "worst_class_accuracy": 0.9602713178294574,
+            "class_0_acc": 0.9897959183673469,
+            "class_1_acc": 0.9876651982378855,
+            "class_2_acc": 0.9602713178294574,
+            "class_3_acc": 0.9782178217821782,
+            "class_4_acc": 0.9826883910386965,
+            "class_5_acc": 0.976457399103139,
+            "class_6_acc": 0.9791231732776617,
+            "class_7_acc": 0.9620622568093385,
+            "class_8_acc": 0.9640657084188912,
+            "class_9_acc": 0.9702675916749257
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.996588777076582,
+            "client_1_local_acc": 0.9911764705882353,
+            "client_2_local_acc": 0.9947777777777778,
+            "client_3_local_acc": 0.9912019087384432,
+            "client_4_local_acc": 0.9960661807242855,
+            "client_5_local_acc": 0.9962636776087537,
+            "client_6_local_acc": 0.9960799686397491,
+            "client_7_local_acc": 0.992791519434629,
+            "client_8_local_acc": 0.9932947976878612,
+            "client_9_local_acc": 0.9926762921113204
+          }
+        }
+      }
+    },
+    "50shot_per_class": {
+      "calibration_per_class": 50,
+      "merges": {
+        "sample_weighted_avg": {
+          "global": {
+            "loss": 0.49189385986328127,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_bias_cal": {
+          "global": {
+            "loss": 0.46524969177246095,
+            "accuracy": 0.8749,
+            "macro_accuracy": 0.8721287403546848,
+            "worst_class_accuracy": 0.6760089686098655,
+            "class_0_acc": 0.9438775510204082,
+            "class_1_acc": 0.9762114537444934,
+            "class_2_acc": 0.9573643410852714,
+            "class_3_acc": 0.8554455445544554,
+            "class_4_acc": 0.9521384928716904,
+            "class_5_acc": 0.6760089686098655,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7840466926070039,
+            "class_8_acc": 0.8747433264887063,
+            "class_9_acc": 0.7452923686818632
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9090909090909091,
+            "client_1_local_acc": 0.8718487394957983,
+            "client_2_local_acc": 0.7834444444444445,
+            "client_3_local_acc": 0.8474500447360572,
+            "client_4_local_acc": 0.8772416984843225,
+            "client_5_local_acc": 0.9071257005604484,
+            "client_6_local_acc": 0.9018032144257154,
+            "client_7_local_acc": 0.83886925795053,
+            "client_8_local_acc": 0.9500578034682081,
+            "client_9_local_acc": 0.8913998744507219
+          }
+        },
+        "sample_weighted_temperature": {
+          "global": {
+            "loss": 0.4533197708129883,
+            "accuracy": 0.8598,
+            "macro_accuracy": 0.8565565837141765,
+            "worst_class_accuracy": 0.6165919282511211,
+            "class_0_acc": 0.9275510204081633,
+            "class_1_acc": 0.9726872246696036,
+            "class_2_acc": 0.9583333333333334,
+            "class_3_acc": 0.8534653465346534,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6165919282511211,
+            "class_6_acc": 0.9561586638830898,
+            "class_7_acc": 0.7558365758754864,
+            "class_8_acc": 0.8829568788501027,
+            "class_9_acc": 0.6878097125867195
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9049974415828075,
+            "client_1_local_acc": 0.8672268907563025,
+            "client_2_local_acc": 0.7593333333333333,
+            "client_3_local_acc": 0.8277661795407099,
+            "client_4_local_acc": 0.8617378225153304,
+            "client_5_local_acc": 0.8980517747531358,
+            "client_6_local_acc": 0.8861230889847119,
+            "client_7_local_acc": 0.8251590106007067,
+            "client_8_local_acc": 0.9514450867052023,
+            "client_9_local_acc": 0.8911906256539025
+          }
+        },
+        "sample_weighted_vector_scaling": {
+          "global": {
+            "loss": 0.3347968116760254,
+            "accuracy": 0.9054,
+            "macro_accuracy": 0.9036634970522304,
+            "worst_class_accuracy": 0.7993273542600897,
+            "class_0_acc": 0.9724489795918367,
+            "class_1_acc": 0.9832599118942731,
+            "class_2_acc": 0.9176356589147286,
+            "class_3_acc": 0.8920792079207921,
+            "class_4_acc": 0.9480651731160896,
+            "class_5_acc": 0.7993273542600897,
+            "class_6_acc": 0.9582463465553236,
+            "class_7_acc": 0.867704280155642,
+            "class_8_acc": 0.8613963039014374,
+            "class_9_acc": 0.8364717542120912
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.921371311615214,
+            "client_1_local_acc": 0.9054621848739496,
+            "client_2_local_acc": 0.8487777777777777,
+            "client_3_local_acc": 0.8814494482552938,
+            "client_4_local_acc": 0.9118361679972232,
+            "client_5_local_acc": 0.9170002668801708,
+            "client_6_local_acc": 0.9276754214033712,
+            "client_7_local_acc": 0.8887632508833923,
+            "client_8_local_acc": 0.935028901734104,
+            "client_9_local_acc": 0.9029085582757899
+          }
+        },
+        "sample_weighted_last_layer_tune": {
+          "global": {
+            "loss": 0.3854387817382813,
+            "accuracy": 0.9069,
+            "macro_accuracy": 0.9050411634911504,
+            "worst_class_accuracy": 0.7959641255605381,
+            "class_0_acc": 0.9724489795918367,
+            "class_1_acc": 0.9832599118942731,
+            "class_2_acc": 0.936046511627907,
+            "class_3_acc": 0.8801980198019802,
+            "class_4_acc": 0.9429735234215886,
+            "class_5_acc": 0.7959641255605381,
+            "class_6_acc": 0.94258872651357,
+            "class_7_acc": 0.8433852140077821,
+            "class_8_acc": 0.86652977412731,
+            "class_9_acc": 0.8870168483647175
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9188128944226506,
+            "client_1_local_acc": 0.9006302521008404,
+            "client_2_local_acc": 0.8495555555555555,
+            "client_3_local_acc": 0.8974053086787951,
+            "client_4_local_acc": 0.9120675691310888,
+            "client_5_local_acc": 0.9266079530290899,
+            "client_6_local_acc": 0.9362994903959232,
+            "client_7_local_acc": 0.8855123674911661,
+            "client_8_local_acc": 0.9352601156069364,
+            "client_9_local_acc": 0.9026993094789705
+          }
+        },
+        "sample_weighted_hidden_head_tune": {
+          "global": {
+            "loss": 0.348523828125,
+            "accuracy": 0.9123,
+            "macro_accuracy": 0.9110285505031325,
+            "worst_class_accuracy": 0.8239910313901345,
+            "class_0_acc": 0.9744897959183674,
+            "class_1_acc": 0.9665198237885463,
+            "class_2_acc": 0.9050387596899225,
+            "class_3_acc": 0.906930693069307,
+            "class_4_acc": 0.9378818737270875,
+            "class_5_acc": 0.8239910313901345,
+            "class_6_acc": 0.9467640918580376,
+            "class_7_acc": 0.8667315175097277,
+            "class_8_acc": 0.8850102669404517,
+            "class_9_acc": 0.8969276511397423
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9264881460003411,
+            "client_1_local_acc": 0.9119747899159664,
+            "client_2_local_acc": 0.8713333333333333,
+            "client_3_local_acc": 0.9027736355502535,
+            "client_4_local_acc": 0.9200509082494505,
+            "client_5_local_acc": 0.9236722711502535,
+            "client_6_local_acc": 0.9366914935319482,
+            "client_7_local_acc": 0.8996466431095407,
+            "client_8_local_acc": 0.9260115606936417,
+            "client_9_local_acc": 0.9091860221803725
+          }
+        },
+        "regmean_hidden_layers": {
+          "global": {
+            "loss": 0.44229861526489256,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_bias_cal": {
+          "global": {
+            "loss": 0.42947471160888673,
+            "accuracy": 0.8733,
+            "macro_accuracy": 0.8711563752658782,
+            "worst_class_accuracy": 0.7219730941704036,
+            "class_0_acc": 0.9510204081632653,
+            "class_1_acc": 0.945374449339207,
+            "class_2_acc": 0.9176356589147286,
+            "class_3_acc": 0.8316831683168316,
+            "class_4_acc": 0.9531568228105907,
+            "class_5_acc": 0.7219730941704036,
+            "class_6_acc": 0.9352818371607515,
+            "class_7_acc": 0.8550583657587548,
+            "class_8_acc": 0.8223819301848049,
+            "class_9_acc": 0.777998017839445
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9007334129285349,
+            "client_1_local_acc": 0.8651260504201681,
+            "client_2_local_acc": 0.7933333333333333,
+            "client_3_local_acc": 0.8380554727110051,
+            "client_4_local_acc": 0.8841837325002893,
+            "client_5_local_acc": 0.8935148118494796,
+            "client_6_local_acc": 0.9033712269698158,
+            "client_7_local_acc": 0.8718021201413427,
+            "client_8_local_acc": 0.9269364161849711,
+            "client_9_local_acc": 0.885959405733417
+          }
+        },
+        "regmean_hidden_layers_temperature": {
+          "global": {
+            "loss": 0.43450177993774414,
+            "accuracy": 0.8687,
+            "macro_accuracy": 0.8663601746906275,
+            "worst_class_accuracy": 0.6961883408071748,
+            "class_0_acc": 0.9479591836734694,
+            "class_1_acc": 0.9427312775330396,
+            "class_2_acc": 0.9195736434108527,
+            "class_3_acc": 0.8306930693069307,
+            "class_4_acc": 0.9541751527494908,
+            "class_5_acc": 0.6961883408071748,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.853112840466926,
+            "class_8_acc": 0.8295687885010267,
+            "class_9_acc": 0.7522299306243806
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9012450963670476,
+            "client_1_local_acc": 0.863655462184874,
+            "client_2_local_acc": 0.7837777777777778,
+            "client_3_local_acc": 0.8303012227855652,
+            "client_4_local_acc": 0.8781673030197849,
+            "client_5_local_acc": 0.8927141713370697,
+            "client_6_local_acc": 0.8974911799294394,
+            "client_7_local_acc": 0.8692579505300353,
+            "client_8_local_acc": 0.926242774566474,
+            "client_9_local_acc": 0.8855409081397781
+          }
+        },
+        "regmean_hidden_layers_vector_scaling": {
+          "global": {
+            "loss": 0.37573584823608397,
+            "accuracy": 0.8877,
+            "macro_accuracy": 0.8862007276769651,
+            "worst_class_accuracy": 0.8116591928251121,
+            "class_0_acc": 0.9612244897959183,
+            "class_1_acc": 0.9647577092511013,
+            "class_2_acc": 0.8837209302325582,
+            "class_3_acc": 0.8504950495049505,
+            "class_4_acc": 0.924643584521385,
+            "class_5_acc": 0.8116591928251121,
+            "class_6_acc": 0.9258872651356994,
+            "class_7_acc": 0.8696498054474708,
+            "class_8_acc": 0.8285420944558521,
+            "class_9_acc": 0.8414271555996036
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9019273409517312,
+            "client_1_local_acc": 0.8840336134453781,
+            "client_2_local_acc": 0.8341111111111111,
+            "client_3_local_acc": 0.8656427080226663,
+            "client_4_local_acc": 0.8980678005322226,
+            "client_5_local_acc": 0.9012543368027756,
+            "client_6_local_acc": 0.9186593492747942,
+            "client_7_local_acc": 0.8859363957597173,
+            "client_8_local_acc": 0.91121387283237,
+            "client_9_local_acc": 0.8817744297970287
+          }
+        },
+        "regmean_hidden_layers_last_layer_tune": {
+          "global": {
+            "loss": 0.37755995483398436,
+            "accuracy": 0.8871,
+            "macro_accuracy": 0.8854315429957339,
+            "worst_class_accuracy": 0.7993273542600897,
+            "class_0_acc": 0.9551020408163265,
+            "class_1_acc": 0.9629955947136564,
+            "class_2_acc": 0.9031007751937985,
+            "class_3_acc": 0.8297029702970297,
+            "class_4_acc": 0.9276985743380856,
+            "class_5_acc": 0.7993273542600897,
+            "class_6_acc": 0.9311064718162839,
+            "class_7_acc": 0.867704280155642,
+            "class_8_acc": 0.8193018480492813,
+            "class_9_acc": 0.8582755203171457
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.8978338734436295,
+            "client_1_local_acc": 0.8794117647058823,
+            "client_2_local_acc": 0.8255555555555556,
+            "client_3_local_acc": 0.872651356993737,
+            "client_4_local_acc": 0.9008446141386093,
+            "client_5_local_acc": 0.9044568988524153,
+            "client_6_local_acc": 0.9206193649549197,
+            "client_7_local_acc": 0.8839575971731449,
+            "client_8_local_acc": 0.9195375722543353,
+            "client_9_local_acc": 0.8817744297970287
+          }
+        },
+        "regmean_hidden_layers_hidden_head_tune": {
+          "global": {
+            "loss": 0.3770164863586426,
+            "accuracy": 0.8915,
+            "macro_accuracy": 0.8907557227770152,
+            "worst_class_accuracy": 0.8262331838565022,
+            "class_0_acc": 0.9693877551020408,
+            "class_1_acc": 0.93215859030837,
+            "class_2_acc": 0.8866279069767442,
+            "class_3_acc": 0.8831683168316832,
+            "class_4_acc": 0.9368635437881874,
+            "class_5_acc": 0.8262331838565022,
+            "class_6_acc": 0.9373695198329853,
+            "class_7_acc": 0.8385214007782101,
+            "class_8_acc": 0.8429158110882957,
+            "class_9_acc": 0.8543111992071358
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.9130138154528399,
+            "client_1_local_acc": 0.8831932773109243,
+            "client_2_local_acc": 0.8526666666666667,
+            "client_3_local_acc": 0.8736951983298539,
+            "client_4_local_acc": 0.8954066874927687,
+            "client_5_local_acc": 0.8988524152655458,
+            "client_6_local_acc": 0.9208153665229322,
+            "client_7_local_acc": 0.8713780918727915,
+            "client_8_local_acc": 0.913757225433526,
+            "client_9_local_acc": 0.897468089558485
+          }
+        },
+        "centralized": {
+          "global": {
+            "loss": 0.08252302122116088,
+            "accuracy": 0.9751,
+            "macro_accuracy": 0.9750614776539521,
+            "worst_class_accuracy": 0.9602713178294574,
+            "class_0_acc": 0.9897959183673469,
+            "class_1_acc": 0.9876651982378855,
+            "class_2_acc": 0.9602713178294574,
+            "class_3_acc": 0.9782178217821782,
+            "class_4_acc": 0.9826883910386965,
+            "class_5_acc": 0.976457399103139,
+            "class_6_acc": 0.9791231732776617,
+            "class_7_acc": 0.9620622568093385,
+            "class_8_acc": 0.9640657084188912,
+            "class_9_acc": 0.9702675916749257
+          },
+          "per_client_local_accuracy": {
+            "client_0_local_acc": 0.996588777076582,
+            "client_1_local_acc": 0.9911764705882353,
+            "client_2_local_acc": 0.9947777777777778,
+            "client_3_local_acc": 0.9912019087384432,
+            "client_4_local_acc": 0.9960661807242855,
+            "client_5_local_acc": 0.9962636776087537,
+            "client_6_local_acc": 0.9960799686397491,
+            "client_7_local_acc": 0.992791519434629,
+            "client_8_local_acc": 0.9932947976878612,
+            "client_9_local_acc": 0.9926762921113204
+          }
+        }
+      }
+    }
+  }
+}
