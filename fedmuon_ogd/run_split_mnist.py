@@ -406,6 +406,11 @@ def local_train(
 
 
 def aggregate(global_params, global_control, client_params, client_controls, old_controls):
+    """Synchronous full participation. Every client must already have trained from the same snapshot.
+
+    n equals both N and S only because the caller includes every client. Partial participation
+    is a different formula: X <- ((N-S)/N) X + (1/N) sum_{i in S} X_i.
+    """
     n = len(client_params)
     new_params = zeros_like_params(global_params)
     for params in client_params:

@@ -338,7 +338,9 @@ def onesided_checks() -> dict:
         "trial_records": trials,
         "momentum_note": (
             "The identity is one step. Momentum or a FedMuon correction only replaces G. "
-            "Newton-Schulz is an approximation and does not inherit exact feasibility."
+            "In exact arithmetic the map X -> aX + b XX^T X + c (XX^T)^2 X preserves a one-sided constraint XB=0. "
+            "Finite precision, two-sided constraints, and the spectral-norm bound are separate. "
+            "Coefficients 3.4445, -4.775, 2.0315 send the scalar 0.5 to 1.188859375."
         ),
     }
 
@@ -795,25 +797,34 @@ def train_one(mode, seed, splits, meta, tasks, test_x, test_y, init, n_clients, 
                     }
                 )
                 continue
+            snapshot = base.clone_params(params)
+            control_snapshot = base.clone_params(global_control)
+            local_states = []
+            increments = []
             for client_id in chosen:
-                start = base.clone_params(params)
-                local = base.clone_params(params)
+                local = base.clone_params(snapshot)
                 old_control = base.clone_params(control[client_id])
                 basis = shared if mode in ("shared", "random") else bases[client_id]
                 step_batches = batches[task_id][client_id][round_id * local_steps : (round_id + 1) * local_steps]
                 local, momentum[client_id], residual = local_steps_onesided(
-                    local, momentum[client_id], control[client_id], global_control,
+                    local, momentum[client_id], control[client_id], control_snapshot,
                     clients[client_id], basis, step_batches, 0.1, lr, lr,
                 )
                 new_control = base.clone_params(momentum[client_id])
-                for name in global_control:
-                    global_control[name].add_(new_control[name] - old_control[name], alpha=1.0 / n_clients)
+                increments.append({name: new_control[name] - old_control[name] for name in new_control})
                 control[client_id] = new_control
-                delta = {name: local[name] - start[name] for name in protected_names}
-                deltas.append((client_id, delta))
+                local_states.append(local)
+                deltas.append((client_id, {name: local[name] - snapshot[name] for name in protected_names}))
                 local_residuals.append(residual)
-                for name in params:
-                    params[name].add_(local[name] - start[name], alpha=1.0 / n_clients)
+            participants = len(chosen)
+            for name in params:
+                params[name].copy_(snapshot[name] * ((n_clients - participants) / n_clients))
+                for local in local_states:
+                    params[name].add_(local[name], alpha=1.0 / n_clients)
+            for name in global_control:
+                global_control[name].copy_(control_snapshot[name])
+                for increment in increments:
+                    global_control[name].add_(increment[name], alpha=1.0 / n_clients)
             round_logs.append(
                 {
                     "task": task_id,

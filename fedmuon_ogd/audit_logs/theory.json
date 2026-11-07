@@ -1113,7 +1113,7 @@
         "index": 39
       }
     ],
-    "momentum_note": "The identity is one step. Momentum or a FedMuon correction only replaces G. Newton-Schulz is an approximation and does not inherit exact feasibility."
+    "momentum_note": "The identity is one step. Momentum or a FedMuon correction only replaces G. In exact arithmetic the map X -> aX + b XX^T X + c (XX^T)^2 X preserves XB=0. Finite precision, two-sided constraints, and the spectral-norm bound are separate. Coefficients 3.4445, -4.775, 2.0315 send the scalar 0.5 to 1.188859375. This sentence replaces an earlier unconditional claim that Newton-Schulz does not inherit feasibility."
   },
   "reference_solver": {
     "matrix_shape": [

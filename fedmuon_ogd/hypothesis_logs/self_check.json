@@ -1,0 +1,59 @@
+{
+  "scientific": false,
+  "executed_on_rtx_5080": false,
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.12.113+-x86_64-with-glibc2.39",
+    "torch": "2.15.0+cpu",
+    "cuda_available": false,
+    "device_name": "cpu",
+    "device_capability": null,
+    "executed_on_rtx_5080": false,
+    "requirements": {
+      "paper_profile": "Python 3.10+, a CUDA build of PyTorch that supports the GPU it runs on, torchvision, and CIFAR-100 at the path in CIFAR100_ROOT.",
+      "memory": "ResNet-18 with 20 client momentum and control copies is sized for a 16 GB GPU.",
+      "this_session": "No RTX 5080 connection is available here. A run on CPU or another GPU must keep executed_on_rtx_5080 false."
+    }
+  },
+  "foundation": {
+    "scalar_0_5": "1.188859375",
+    "one_sided_float64_residual": 4.810215529379848e-16,
+    "one_sided_float64_spectral_norm": 1.1994469076813568,
+    "one_sided_float32_residual": 8.170199805590528e-08,
+    "one_sided_float32_spectral_norm": 1.1994470357894897,
+    "two_sided_entry_before": 0.0,
+    "two_sided_entry_after": -0.36202342350092076,
+    "unnormalized_ns_obeys_unit_spectral_bound": false,
+    "statements": [
+      "In exact arithmetic, X |-> aX + b XX^T X + c (XX^T)^2 X preserves XB=0.",
+      "Coefficients 3.4445, -4.775, 2.0315 send 0.5 to 1.188859375.",
+      "The measured spectral norm of one unnormalized Newton-Schulz step is about 1.199. That does not satisfy ||D||_2 <= 1.",
+      "A training step that is required to lie in the unit spectral ball is divided by max(sigma, 1). The unnormalized quintic is not that step.",
+      "A two-sided entry constraint is not preserved by that map.",
+      "A float32 residual is a finite-precision observation, not a structural failure of the one-sided identity."
+    ]
+  },
+  "order_invariance": {
+    "n_total": 4,
+    "participants": 2,
+    "order_parameter_diff": 2.9802322387695312e-08,
+    "order_global_control_diff": 1.862645149230957e-09,
+    "order_momentum_diff": 0.0,
+    "reference_parameter_diff": 0.0,
+    "reference_control_diff": 0.0,
+    "participant_only_average_diff": 0.01436813548207283
+  },
+  "resnet_forward_shape": [
+    2,
+    100
+  ],
+  "conv_polar_shape": [
+    64,
+    27
+  ],
+  "conv_polar_spectral_norm": 1.000000238418579,
+  "plumbing_rounds_logged": 4,
+  "resume_state_diff": 0.0,
+  "resume_matches_uninterrupted": true,
+  "hypothesis_status": "unverified"
+}

@@ -1,5 +1,5 @@
 {
-  "status": "rerun with polar(GN) N^T after the float32 polar(GP) diagnostic was voided",
+  "status": "needs_rerun",
   "role": "diagnostic only; local versus shared subspaces are not a paper contribution",
   "protocol": {
     "tasks": [
@@ -3077,5 +3077,9 @@
         }
       ]
     }
-  ]
+  ],
+  "training_status": "needs_rerun",
+  "training_status_reason": "train_one updated the global model and global control inside the client loop, so later clients did not start from the round snapshot. FedAvg/FedMuon partial participation aggregates once: X <- ((N-S)/N) X + (1/N) sum_{i in S} X_i and C <- C + (1/N) sum_{i in S} (C_i_new - C_i_old). The numbers in runs were produced by the sequential loop and are not a FedMuon baseline. theory.json is a matrix regression and is not affected. The full-participation trainer in run_split_mnist.py already cloned one snapshot and aggregated once.",
+  "theory_regression_affected": false,
+  "previous_status": "rerun with polar(GN) N^T after the float32 polar(GP) diagnostic was voided"
 }
