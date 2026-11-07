@@ -133,7 +133,13 @@ def mask_output_rows(matrix: torch.Tensor, rows: tuple[int, ...]) -> torch.Tenso
 
 
 def lmo_constraint_gap() -> dict:
-    """A 2×2 witness that projecting the gradient does not constrain the LMO."""
+    """One Frobenius hyperplane, not a one-sided constraint DB=0.
+
+    The residual below does not transfer to every matrix subspace. In exact arithmetic,
+    if B has orthonormal columns and N spans the complement of B, polar(GN) N^T is optimal
+    for max <G, D> subject to ||D||_2 <= 1 and DB = 0. A float32 SVD of GP that keeps
+    singular values near 1e-8 is not that factor.
+    """
     grad = torch.tensor([[1.0, 0.85], [0.35, 0.45]])
     left = torch.tensor([[1.0], [0.0]])
     right = torch.tensor([[1.0], [0.0]])
@@ -146,8 +152,10 @@ def lmo_constraint_gap() -> dict:
 
     return {
         "statement": (
-            "For the spectral linear-minimization oracle, removing a protected "
-            "component of the gradient does not make the update orthogonal to that component."
+            "This witness is one Frobenius coordinate constraint, D_00 = 0. "
+            "Projecting that entry out of the gradient and then taking the matrix sign "
+            "leaves a nonzero residual. It is not a counterexample to the one-sided "
+            "constraint DB = 0."
         ),
         "plain_alignment": alignment(plain),
         "project_then_lmo_alignment": alignment(projected),

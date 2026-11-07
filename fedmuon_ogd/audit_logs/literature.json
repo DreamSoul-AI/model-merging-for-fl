@@ -1,0 +1,29 @@
+{
+  "decision": "reject the current main line as a submission",
+  "not_contributions": [
+    "Muon plus an orthogonal constraint plus federated averaging.",
+    "A shared protection subspace. FOT already extracts a global input subspace and projects the aggregated update. FedProTIP already projects local client updates with a broadcast global subspace.",
+    "Budget-constrained subspace Muon. FedSubMuon already optimizes Muon coefficients inside a shared structured subspace and tracks bases.",
+    "Spectral LMO with local steps and control variates. That is FedMuon. FedCALM already adds compression on top of that line."
+  ],
+  "tool_lemmas_only": [
+    "Nuclear-norm dual of a spectral ball with linear constraints.",
+    "Compact polar of GP is optimal for the one-sided constraint DB=0."
+  ],
+  "fedgpm": {
+    "pdf_retrieved": false,
+    "same_line_as_fedprotip": false,
+    "note": "No FedGPM PDF was readable. FedProTIP cites centralized GPM (Saha, Garg, Roy, 2021), not a paper titled FedGPM. A separate ICIC 2024 paper by Lin et al. is titled as a federated gradient-projection aggregation method for medical diagnosis. Another short MedAI 2024 note also uses the name FedGPM for learning-rate optimization. These are not counted as a second copy of FedProTIP."
+  },
+  "sources": {
+    "FOT": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/cf53f12ab4ea81d942f16162f7f37e6c-Abstract-Conference.html",
+    "FedProTIP": "https://arxiv.org/abs/2509.21606",
+    "GPM": "https://arxiv.org/abs/2103.09762",
+    "C2-AFCL": "https://proceedings.mlr.press/v306/li26gx.html",
+    "FedSubMuon": "https://arxiv.org/abs/2609.06073",
+    "FedCALM": "https://arxiv.org/abs/2610.23434",
+    "FedMuon": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/427f20d90386fd27804f1831d6a3d48f-Abstract-Conference.html",
+    "Muon-OGD": "https://arxiv.org/abs/2605.08949",
+    "When Muon Meets Task Interference": "https://arxiv.org/abs/2608.27518"
+  }
+}

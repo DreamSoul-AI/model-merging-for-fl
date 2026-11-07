@@ -1,0 +1,84 @@
+{
+  "commit": "79de8960defb029809b287fdb965ce90aa75766f",
+  "results_file": "/workspace/fedmuon_ogd/outputs_directions/results.json",
+  "stdout_archived": false,
+  "reproduction": "python3 fedmuon_ogd/run_split_mnist.py --rounds 10 --local-steps 4 --lr 0.01 --lr-bias 0.01 --rank-per-task 2 --k-max 8 --soft-alpha 0.5 --seeds 0 1 --methods fedmuon proj feasible soft classrow --out fedmuon_ogd/outputs_directions",
+  "seeds": [
+    0,
+    1
+  ],
+  "per_seed_final_average_acc": [
+    0.5670588265636219,
+    0.559264063045057
+  ],
+  "per_seed_last_task_acc": [
+    0.621280887544125,
+    0.5900151285930408
+  ],
+  "mean_final_average_acc": 0.5631614448043395,
+  "mean_last_task_acc": 0.6056480080685829,
+  "reported_rounding": {
+    "56.3%": 56.3,
+    "60.6%": 60.6
+  },
+  "setting_in_same_file": {
+    "dataset": "split-MNIST class-incremental",
+    "tasks": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    "clients": 8,
+    "participation": "full",
+    "partition": "IID equal shard within each task",
+    "rounds_per_task": 10,
+    "local_steps": 4,
+    "batch_size": 64,
+    "alpha": 0.1,
+    "lr": 0.01,
+    "lr_bias": 0.01,
+    "eta_dual": 1.0,
+    "soft_alpha": 0.5,
+    "inner": 8,
+    "ns_steps": 5,
+    "rank_per_task": 2,
+    "k_max": 8,
+    "model": "MLP 784-128-10"
+  },
+  "evaluation": "evaluate_task keeps test rows whose label is in the task pair, then takes argmax over all 10 logits. Seen-class subset, not masked logits.",
+  "freezing_old_logits_does_not_fix_argmax": {
+    "old_logits_unchanged": true,
+    "argmax_before": 0,
+    "argmax_after": 2,
+    "statement": "Layer protection and freezing old head rows do not guarantee class-incremental accuracy. Old logits can stay fixed while a new-class logit changes the argmax."
+  },
+  "compute": "4 CPU threads, torch 2.15.0+cpu, CUDA unavailable. No GPU was used.",
+  "fedmuon_bias_correction": {
+    "matches_paper_update": "M <- (1-alpha)M + alpha grad; step uses lmo(M - C_i + C); C_i <- M; full participation averages parameters and control increments by 1/n.",
+    "deviations": [
+      "Newton-Schulz coefficients are the quintic 3.4445, -4.7750, 2.0315, not FedMuon's 15/8, -5/4, 3/8.",
+      "No per-layer dimension rescaling of the step size.",
+      "Momentum and controls are reset at every task boundary.",
+      "The 56.3% method additionally zeros old output rows after the matrix sign and zeros old biases. That is not FedMuon.",
+      "Five Newton-Schulz steps, not an exact polar factor.",
+      "Data are IID equal shards and all 8 clients participate. FedMuon's reported experiments use Dirichlet partitions and partial participation."
+    ]
+  }
+}
