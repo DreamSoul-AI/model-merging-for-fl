@@ -1,0 +1,342 @@
+{
+  "claim": "small diagnostic only; not a paper result",
+  "question": "Does local Muon make one-shot uniform averaging or RegMean more accurate than local Adam?",
+  "runs": [
+    {
+      "optimizer": "adam",
+      "lr": 0.001,
+      "client_test_acc_mean": 0.360125,
+      "client_test_acc": [
+        0.3104,
+        0.4648,
+        0.1953,
+        0.47
+      ],
+      "simple_average_test_acc": 0.3677,
+      "regmean_test_acc": 0.7974,
+      "centralized_test_acc": 0.9433,
+      "mean_pairwise_parameter_distance": 8.526923418045044,
+      "alpha": 0.1,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        16263,
+        17317,
+        2539,
+        23881
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.02,
+      "client_test_acc_mean": 0.42065,
+      "client_test_acc": [
+        0.4063,
+        0.5731,
+        0.2095,
+        0.4937
+      ],
+      "simple_average_test_acc": 0.4382,
+      "regmean_test_acc": 0.7779,
+      "centralized_test_acc": 0.9686,
+      "mean_pairwise_parameter_distance": 22.516361872355144,
+      "alpha": 0.1,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        16263,
+        17317,
+        2539,
+        23881
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.05,
+      "client_test_acc_mean": 0.45445,
+      "client_test_acc": [
+        0.3269,
+        0.5176,
+        0.4749,
+        0.4984
+      ],
+      "simple_average_test_acc": 0.4558,
+      "regmean_test_acc": 0.7298,
+      "centralized_test_acc": 0.9574,
+      "mean_pairwise_parameter_distance": 48.29012934366862,
+      "alpha": 0.1,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        16263,
+        17317,
+        2539,
+        23881
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "adam",
+      "lr": 0.001,
+      "client_test_acc_mean": 0.41595000000000004,
+      "client_test_acc": [
+        0.4369,
+        0.4635,
+        0.4032,
+        0.3602
+      ],
+      "simple_average_test_acc": 0.3867,
+      "regmean_test_acc": 0.8128,
+      "centralized_test_acc": 0.9441,
+      "mean_pairwise_parameter_distance": 9.042104959487915,
+      "alpha": 0.1,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        8409,
+        20827,
+        16877,
+        13887
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.02,
+      "client_test_acc_mean": 0.4886,
+      "client_test_acc": [
+        0.4875,
+        0.5405,
+        0.4492,
+        0.4772
+      ],
+      "simple_average_test_acc": 0.4863,
+      "regmean_test_acc": 0.8075,
+      "centralized_test_acc": 0.9689,
+      "mean_pairwise_parameter_distance": 22.539260546366375,
+      "alpha": 0.1,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        8409,
+        20827,
+        16877,
+        13887
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.05,
+      "client_test_acc_mean": 0.48305000000000003,
+      "client_test_acc": [
+        0.4903,
+        0.5149,
+        0.4524,
+        0.4746
+      ],
+      "simple_average_test_acc": 0.4032,
+      "regmean_test_acc": 0.7719,
+      "centralized_test_acc": 0.9553,
+      "mean_pairwise_parameter_distance": 47.89323870340983,
+      "alpha": 0.1,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        8409,
+        20827,
+        16877,
+        13887
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "adam",
+      "lr": 0.001,
+      "client_test_acc_mean": 0.7771,
+      "client_test_acc": [
+        0.6238,
+        0.9041,
+        0.7559,
+        0.8246
+      ],
+      "simple_average_test_acc": 0.8549,
+      "regmean_test_acc": 0.9021,
+      "centralized_test_acc": 0.9433,
+      "mean_pairwise_parameter_distance": 7.323263168334961,
+      "alpha": 1.0,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        6874,
+        17227,
+        16422,
+        19477
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.02,
+      "client_test_acc_mean": 0.892275,
+      "client_test_acc": [
+        0.8697,
+        0.9514,
+        0.8383,
+        0.9097
+      ],
+      "simple_average_test_acc": 0.9466,
+      "regmean_test_acc": 0.9424,
+      "centralized_test_acc": 0.9686,
+      "mean_pairwise_parameter_distance": 18.57643985748291,
+      "alpha": 1.0,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        6874,
+        17227,
+        16422,
+        19477
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.05,
+      "client_test_acc_mean": 0.879175,
+      "client_test_acc": [
+        0.8799,
+        0.9364,
+        0.8217,
+        0.8787
+      ],
+      "simple_average_test_acc": 0.9345,
+      "regmean_test_acc": 0.9305,
+      "centralized_test_acc": 0.9574,
+      "mean_pairwise_parameter_distance": 40.57856814066569,
+      "alpha": 1.0,
+      "seed": 0,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        6874,
+        17227,
+        16422,
+        19477
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "adam",
+      "lr": 0.001,
+      "client_test_acc_mean": 0.779575,
+      "client_test_acc": [
+        0.891,
+        0.787,
+        0.6864,
+        0.7539
+      ],
+      "simple_average_test_acc": 0.8459,
+      "regmean_test_acc": 0.8986,
+      "centralized_test_acc": 0.9441,
+      "mean_pairwise_parameter_distance": 7.6300590833028155,
+      "alpha": 1.0,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        23243,
+        15860,
+        9489,
+        11408
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.02,
+      "client_test_acc_mean": 0.90105,
+      "client_test_acc": [
+        0.95,
+        0.9102,
+        0.878,
+        0.866
+      ],
+      "simple_average_test_acc": 0.9319,
+      "regmean_test_acc": 0.9418,
+      "centralized_test_acc": 0.9689,
+      "mean_pairwise_parameter_distance": 18.90749502182007,
+      "alpha": 1.0,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        23243,
+        15860,
+        9489,
+        11408
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    },
+    {
+      "optimizer": "muon",
+      "lr": 0.05,
+      "client_test_acc_mean": 0.89925,
+      "client_test_acc": [
+        0.9253,
+        0.9006,
+        0.8842,
+        0.8869
+      ],
+      "simple_average_test_acc": 0.9167,
+      "regmean_test_acc": 0.9282,
+      "centralized_test_acc": 0.9553,
+      "mean_pairwise_parameter_distance": 40.500359217325844,
+      "alpha": 1.0,
+      "seed": 1,
+      "epochs": 2,
+      "num_clients": 4,
+      "hidden": 64,
+      "client_sizes": [
+        23243,
+        15860,
+        9489,
+        11408
+      ],
+      "regmean_data": "each client's own training set",
+      "muon": "Nesterov momentum 0.95, 5 Newton-Schulz steps, Adam lr 0.001 on bias"
+    }
+  ]
+}
