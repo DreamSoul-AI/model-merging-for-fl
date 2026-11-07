@@ -6,12 +6,10 @@ X <- ((N-S)/N) X + (1/N) sum_{i in S} X_i, and
 C <- C + (1/N) sum_{i in S} (C_i_new - C_i_old).
 N is the number of clients and S is the number of participants.
 
-H-absent is an unverified diagnostic hypothesis, not a new method. It says that
-the mean old-task argmax accuracy of clients absent from a round, scored on
-each absent client's own test partition pooled over every previous task, is
-lower when each client protects its own accumulated gradient subspace than when
-every client uses one shared accumulated gradient subspace of the same cap.
-The subspaces are right singular vectors of gradients, not activation bases.
+H-absent is a tool diagnostic, not a paper claim. A client subspace versus a
+shared subspace repeats local-versus-global subspace effects that already
+appear in the literature. Do not scale this entry. The subspaces it measures
+are right singular vectors of gradients, not activation bases.
 
 A run is marked executed_on_rtx_5080 only after a training step has run on a
 CUDA parameter device whose name contains 5080. Seeing that GPU in the machine

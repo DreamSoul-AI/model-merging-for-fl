@@ -1,9 +1,10 @@
 {
   "hypothesis_id": "H-absent-smoke",
-  "status": "smoke_not_a_result",
+  "status": "tool_smoke_not_a_result",
   "is_new_method": false,
-  "run_kind": "smoke",
-  "statement": "Smoke of the H-absent entry on real CIFAR-100 images. It does not test the hypothesis and it is not a method.",
+  "paper_claim": false,
+  "run_kind": "tool_smoke",
+  "statement": "Tool smoke of the diagnostic entry on real CIFAR-100 images. It is not a paper claim and it does not test a qualified research hypothesis.",
   "not_a_method": "No new optimizer is proposed.",
   "voided_evidence": "No accuracy from discriminate.json is evidence.",
   "basis": "gradient",

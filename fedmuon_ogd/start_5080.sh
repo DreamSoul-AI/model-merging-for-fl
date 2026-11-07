@@ -2,8 +2,9 @@
 # One command for the RTX 5080 machine.
 # Default: CUDA self-check, then the real CIFAR-100 smoke. It does not start
 # the 10-seed preregistered run in configs/h_absent.json.
-# H-absent stays an unverified hypothesis. This script does not request root
-# and does not change the system driver.
+# This launcher is a tool check. It is not a research result, and it does not
+# turn H-absent into a paper claim. This script does not request root and does
+# not change the system driver.
 #
 #   git clone --branch cursor/fedmuon-ogd-bfdd --single-branch https://github.com/DreamSoul-AI/model-merging-for-fl.git && cd model-merging-for-fl && bash fedmuon_ogd/start_5080.sh
 
@@ -105,8 +106,8 @@ path = Path(sys.argv[1])
 if path.name != "h_absent_smoke.json":
     raise SystemExit(f"refusing {path.name}; this launcher only runs the smoke config")
 config = json.loads(path.read_text())
-if config.get("is_new_method", True) or config.get("status") != "smoke_not_a_result":
-    raise SystemExit("smoke config must stay a non-result")
+if config.get("is_new_method", True) or config.get("paper_claim", True) or config.get("status") != "tool_smoke_not_a_result":
+    raise SystemExit("smoke config must stay a tool check, not a paper claim")
 if config.get("seeds") != [0] or int(config["clients"]) > 4 or int(config["rounds_per_task"]) > 1 or int(config["num_classes"]) > 20:
     raise SystemExit("refusing a config larger than the CIFAR-100 smoke")
 print(config["hypothesis_id"])
@@ -213,7 +214,7 @@ run_smoke_command() {
 main() {
   cd "$REPO_ROOT"
   mkdir -p "$LOG_DIR"
-  echo "H-absent 仍是未验证假说。本脚本只跑自检和 CIFAR-100 smoke，不启动 30 组正式实验。"
+  echo "H-absent 只是工具诊断，不是论文主张。本脚本只跑自检和 CIFAR-100 smoke，不启动正式实验。"
   assert_smoke_config >/dev/null
   local py
   py=$(choose_python python3)
@@ -254,7 +255,7 @@ main() {
       *) die "无法识别检查点状态：$decision" ;;
     esac
   done < <("$py" -c 'import json,sys; print("\n".join(json.load(open(sys.argv[1]))["arms"]))' "$SMOKE_CONFIG")
-  echo "smoke 结束。这不是 H-absent 的结论，假说仍未验证。日志在 $LOG_DIR 和 $SMOKE_OUT。"
+  echo "smoke 结束。这只是工具检查，不是研究成果。日志在 $LOG_DIR 和 $SMOKE_OUT。"
 }
 
 if [[ "${START_5080_SOURCE_ONLY:-0}" != "1" ]]; then
