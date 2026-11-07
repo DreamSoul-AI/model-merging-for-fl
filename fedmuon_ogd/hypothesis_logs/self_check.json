@@ -1,19 +1,28 @@
 {
   "scientific": false,
+  "is_new_method": false,
+  "hypothesis_status": "unverified",
   "executed_on_rtx_5080": false,
   "environment": {
     "python": "3.12.3",
     "platform": "Linux-6.12.113+-x86_64-with-glibc2.39",
     "torch": "2.15.0+cpu",
     "cuda_available": false,
-    "device_name": "cpu",
-    "device_capability": null,
-    "executed_on_rtx_5080": false,
-    "requirements": {
-      "paper_profile": "Python 3.10+, a CUDA build of PyTorch that supports the GPU it runs on, torchvision, and CIFAR-100 at the path in CIFAR100_ROOT.",
-      "memory": "ResNet-18 with 20 client momentum and control copies is sized for a 16 GB GPU.",
-      "this_session": "No RTX 5080 connection is available here. A run on CPU or another GPU must keep executed_on_rtx_5080 false."
-    }
+    "visible_cuda_device_name": null,
+    "parameter_device": "cpu",
+    "cuda_training_steps": 0,
+    "used_cuda_device_name": null,
+    "executed_on_rtx_5080": false
+  },
+  "placement": {
+    "parameter_device": "cpu",
+    "cuda_training_steps": 0
+  },
+  "flag_cases": {
+    "cpu_with_5080_visible": false,
+    "cuda_device_without_a_step": false,
+    "cuda_steps_on_5080": true,
+    "cuda_steps_on_other_gpu": false
   },
   "foundation": {
     "scalar_0_5": "1.188859375",
@@ -43,6 +52,107 @@
     "reference_control_diff": 0.0,
     "participant_only_average_diff": 0.01436813548207283
   },
+  "shared_subspace": {
+    "client_order_projector_diff": 0.0,
+    "largest_weight_direction_overlap": 1.0,
+    "smallest_weight_direction_overlap": 0.0,
+    "qr_prefix_overlap_with_largest_weight": 0.0,
+    "accumulated_task0_overlap": 1.0,
+    "overwrite_task0_overlap": 0.0
+  },
+  "eval_batches": {
+    "chunks": [
+      [
+        4,
+        "cpu"
+      ],
+      [
+        4,
+        "cpu"
+      ],
+      [
+        4,
+        "cpu"
+      ],
+      [
+        4,
+        "cpu"
+      ],
+      [
+        4,
+        "cpu"
+      ]
+    ],
+    "predictions": 20
+  },
+  "resume": {
+    "within_task": {
+      "stopped": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "final": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "log_rows": 4,
+      "phase_at_halt": "train_round"
+    },
+    "end_of_task_before_boundary": {
+      "stopped": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "final": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "log_rows": 4,
+      "phase_at_halt": "task_boundary"
+    },
+    "after_task_boundary": {
+      "stopped": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "final": {
+        "model": 0.0,
+        "momentum": 0.0,
+        "control": 0.0,
+        "global_control": 0.0,
+        "client_bases": 0.0,
+        "shared_basis": 0.0,
+        "gradient_shared": 0.0
+      },
+      "log_rows": 4,
+      "phase_at_halt": "train_round"
+    }
+  },
   "resnet_forward_shape": [
     2,
     100
@@ -51,9 +161,5 @@
     64,
     27
   ],
-  "conv_polar_spectral_norm": 1.000000238418579,
-  "plumbing_rounds_logged": 4,
-  "resume_state_diff": 0.0,
-  "resume_matches_uninterrupted": true,
-  "hypothesis_status": "unverified"
+  "primary_metric": "mean_absent_client_old_task_accuracy"
 }
