@@ -87,6 +87,74 @@ def project_out(grad: torch.Tensor, left: torch.Tensor | None, right: torch.Tens
     return grad - left @ (left.T @ grad @ right) @ right.T
 
 
+def spectral_normalize(matrix: torch.Tensor, eps: float = 1e-8) -> torch.Tensor:
+    """Return a matrix in the spectral unit ball, preserving direction."""
+    spec = torch.linalg.matrix_norm(matrix, ord=2)
+    if float(spec) < eps:
+        return torch.zeros_like(matrix)
+    return matrix / spec
+
+
+def feasible_direction(
+    grad: torch.Tensor,
+    left: torch.Tensor | None,
+    right: torch.Tensor | None,
+    ns_steps: int,
+) -> torch.Tensor:
+    """A feasible point of the constrained spectral step.
+
+    Project the polar factor, not the gradient. The result satisfies
+    U^T Δ V = 0 and ||Δ||_2 = 1 whenever the projected factor is nonzero.
+    Project-then-orthogonalize does not have the first property, because the
+    matrix sign does not commute with a linear projector.
+    """
+    signed = newton_schulz(grad, ns_steps)
+    return spectral_normalize(project_out(signed, left, right))
+
+
+def soft_direction(
+    grad: torch.Tensor,
+    left: torch.Tensor | None,
+    right: torch.Tensor | None,
+    soft_alpha: float,
+    ns_steps: int,
+) -> torch.Tensor:
+    """Remove only a fraction of the protected component, then orthogonalize."""
+    protected = grad - project_out(grad, left, right)
+    return newton_schulz(grad - soft_alpha * protected, ns_steps)
+
+
+def mask_output_rows(matrix: torch.Tensor, rows: tuple[int, ...]) -> torch.Tensor:
+    if not rows:
+        return matrix
+    masked = matrix.clone()
+    masked[list(rows), :] = 0
+    return spectral_normalize(masked)
+
+
+def lmo_constraint_gap() -> dict:
+    """A 2×2 witness that projecting the gradient does not constrain the LMO."""
+    grad = torch.tensor([[1.0, 0.85], [0.35, 0.45]])
+    left = torch.tensor([[1.0], [0.0]])
+    right = torch.tensor([[1.0], [0.0]])
+    plain = newton_schulz(grad, steps=8)
+    projected = newton_schulz(project_out(grad, left, right), steps=8)
+    feasible = feasible_direction(grad, left, right, ns_steps=8)
+
+    def alignment(update: torch.Tensor) -> float:
+        return float((left.T @ update @ right).abs())
+
+    return {
+        "statement": (
+            "For the spectral linear-minimization oracle, removing a protected "
+            "component of the gradient does not make the update orthogonal to that component."
+        ),
+        "plain_alignment": alignment(plain),
+        "project_then_lmo_alignment": alignment(projected),
+        "feasible_update_alignment": alignment(feasible),
+    }
+
+
 def dual_correct(
     grad: torch.Tensor,
     left: torch.Tensor | None,
@@ -261,6 +329,8 @@ def local_train(
     subspace: dict[str, tuple[torch.Tensor | None, torch.Tensor | None]],
     lambdas: dict[str, torch.Tensor | None],
     method: str,
+    old_rows: tuple[int, ...],
+    soft_alpha: float,
     steps: int,
     batch_size: int,
     alpha: float,
@@ -296,15 +366,32 @@ def local_train(
                 direction, lambdas[name] = dual_correct(
                     corrected, left, right, lambdas.get(name), eta_dual, inner, ns_steps
                 )
+            elif method == "feasible":
+                direction = feasible_direction(corrected, left, right, ns_steps)
+            elif method == "soft":
+                direction = soft_direction(corrected, left, right, soft_alpha, ns_steps)
+            elif method in ("classrow", "head"):
+                if name == "fc2.weight":
+                    direction = mask_output_rows(newton_schulz(corrected, ns_steps), old_rows)
+                elif method == "classrow":
+                    direction = feasible_direction(corrected, left, right, ns_steps)
+                else:
+                    direction = newton_schulz(corrected, ns_steps)
             else:
                 raise ValueError(method)
             params[name].add_(direction, alpha=-lr)
-            if left is not None and right is not None and left.numel() and right.numel():
+            if name == "fc2.weight" and method in ("classrow", "head") and old_rows:
+                residual += float(direction[list(old_rows), :].abs().mean())
+                residual_count += 1
+            elif left is not None and right is not None and left.numel() and right.numel():
                 residual += float((left.T @ direction @ right).abs().mean())
                 residual_count += 1
         for name in BIAS_NAMES:
             momentum[name].mul_(1 - alpha).add_(grads[name], alpha=alpha)
             corrected = momentum[name] - control[name] + global_control[name]
+            if method in ("classrow", "head") and name == "fc2.bias" and old_rows:
+                corrected = corrected.clone()
+                corrected[list(old_rows)] = 0
             params[name].add_(corrected, alpha=-lr_bias)
         taken += 1
     return params, momentum, lambdas, residual / max(residual_count, 1)
@@ -332,8 +419,10 @@ def run_method(args, method: str, seed: int, train, test_x, test_y, init) -> dic
     global_control = zeros_like_params(params)
     lambdas = [{} for _ in range(n_clients)]
     subspace: dict[str, tuple[torch.Tensor | None, torch.Tensor | None]] = {}
+    protected_rows: list[int] = []
     history = []
     for task_id, clients in enumerate(train):
+        old_rows = tuple(protected_rows)
         for _round in range(args.rounds):
             updated_params = []
             updated_control = []
@@ -351,6 +440,8 @@ def run_method(args, method: str, seed: int, train, test_x, test_y, init) -> dic
                     subspace,
                     lambdas[client_id],
                     method,
+                    old_rows,
+                    args.soft_alpha,
                     args.local_steps,
                     args.batch_size,
                     args.alpha,
@@ -382,6 +473,7 @@ def run_method(args, method: str, seed: int, train, test_x, test_y, init) -> dic
             f"residual={history[-1]['constraint_residual']:.4f}",
             flush=True,
         )
+        protected_rows.extend(TASKS[task_id])
         if method != "fedmuon":
             grad = average_client_gradient(params, clients, args.batch_size)
             subspace = update_subspace(subspace, grad, args.rank_per_task, args.k_max)
@@ -438,8 +530,24 @@ def write_svg(results: list[dict], path: Path) -> None:
     left, right, top, bottom = 56, 20, 28, 48
     plot_w = width - left - right
     plot_h = height - top - bottom
-    colors = {"fedmuon": "#b45309", "proj": "#1d4ed8", "dual": "#047857"}
-    labels = {"fedmuon": "FedMuon", "proj": "FedMuon + project-then-Muon", "dual": "FedMuon + dual OGD"}
+    colors = {
+        "fedmuon": "#b45309",
+        "proj": "#1d4ed8",
+        "dual": "#047857",
+        "feasible": "#7c3aed",
+        "soft": "#0f766e",
+        "classrow": "#be123c",
+        "head": "#9a3412",
+    }
+    labels = {
+        "fedmuon": "FedMuon",
+        "proj": "project gradient, then Muon",
+        "dual": "dual OGD",
+        "feasible": "project the update",
+        "soft": "partial projection",
+        "classrow": "protect old output rows",
+        "head": "output rows only",
+    }
 
     def xy(task_index: int, acc: float) -> tuple[float, float]:
         x = left + plot_w * task_index / max(n_tasks - 1, 1)
@@ -501,7 +609,8 @@ def main():
     parser.add_argument("--k-max", type=int, default=8)
     parser.add_argument("--num-tasks", type=int, default=5)
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1])
-    parser.add_argument("--methods", nargs="+", default=["fedmuon", "proj", "dual"])
+    parser.add_argument("--soft-alpha", type=float, default=0.5)
+    parser.add_argument("--methods", nargs="+", default=["fedmuon", "proj", "feasible", "soft", "classrow"])
     parser.add_argument("--pilot", action="store_true")
     parser.add_argument("--pilot-rounds", type=int, default=8)
     parser.add_argument("--pilot-lrs", type=float, nargs="+", default=[0.02, 0.05, 0.1, 0.2])
@@ -544,12 +653,14 @@ def main():
             "lr": args.lr,
             "lr_bias": args.lr_bias,
             "eta_dual": args.eta_dual,
+            "soft_alpha": args.soft_alpha,
             "inner": args.inner,
             "ns_steps": args.ns_steps,
             "rank_per_task": args.rank_per_task,
             "k_max": args.k_max,
             "model": "MLP 784-128-10",
         },
+        "constraint_witness": lmo_constraint_gap(),
         "results": results,
     }
     (args.out / "results.json").write_text(json.dumps(payload, indent=2))

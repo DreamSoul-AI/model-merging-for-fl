@@ -1,0 +1,201 @@
+{
+  "setting": {
+    "dataset": "split-MNIST class-incremental",
+    "tasks": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    "clients": 8,
+    "participation": "full",
+    "partition": "IID equal shard within each task",
+    "rounds_per_task": 10,
+    "local_steps": 4,
+    "batch_size": 64,
+    "alpha": 0.1,
+    "lr": 0.01,
+    "lr_bias": 0.01,
+    "eta_dual": 1.0,
+    "soft_alpha": 0.5,
+    "inner": 8,
+    "ns_steps": 5,
+    "rank_per_task": 2,
+    "k_max": 8,
+    "model": "MLP 784-128-10"
+  },
+  "constraint_witness": {
+    "statement": "For the spectral linear-minimization oracle, removing a protected component of the gradient does not make the update orthogonal to that component.",
+    "plain_alignment": 0.9341007471084595,
+    "project_then_lmo_alignment": 0.2030189037322998,
+    "feasible_update_alignment": 0.0
+  },
+  "results": [
+    {
+      "method": "head",
+      "seed": 0,
+      "history": [
+        {
+          "task": 0,
+          "per_task_acc": [
+            0.9985815602836879
+          ],
+          "average_acc": 0.9985815602836879,
+          "current_acc": 0.9985815602836879,
+          "constraint_residual": 0.0
+        },
+        {
+          "task": 1,
+          "per_task_acc": [
+            0.9692671394799054,
+            0.7776689520078355
+          ],
+          "average_acc": 0.8734680457438704,
+          "current_acc": 0.7776689520078355,
+          "constraint_residual": 0.15334935719147325
+        },
+        {
+          "task": 2,
+          "per_task_acc": [
+            0.23687943262411348,
+            0.4745347698334966,
+            0.9316969050160085
+          ],
+          "average_acc": 0.5477037024912063,
+          "current_acc": 0.9316969050160085,
+          "constraint_residual": 0.04963471845258027
+        },
+        {
+          "task": 3,
+          "per_task_acc": [
+            0.08085106382978724,
+            0.0910871694417238,
+            0.4429028815368196,
+            0.9843907351460222
+          ],
+          "average_acc": 0.3998079624885882,
+          "current_acc": 0.9843907351460222,
+          "constraint_residual": 0.03965800639707595
+        },
+        {
+          "task": 4,
+          "per_task_acc": [
+            0.0070921985815602835,
+            0.0014691478942213516,
+            0.06510138740661686,
+            0.7910372608257804,
+            0.8935955622793746
+          ],
+          "average_acc": 0.3516591113975107,
+          "current_acc": 0.8935955622793746,
+          "constraint_residual": 0.03704164456576109
+        }
+      ],
+      "final_average_acc": 0.3516591113975107,
+      "final_per_task_acc": [
+        0.0070921985815602835,
+        0.0014691478942213516,
+        0.06510138740661686,
+        0.7910372608257804,
+        0.8935955622793746
+      ],
+      "backward_transfer": -0.7069095394363438,
+      "rank_per_task": 2,
+      "k_max": 8,
+      "lr": 0.01,
+      "lr_bias": 0.01,
+      "eta_dual": 1.0
+    },
+    {
+      "method": "head",
+      "seed": 1,
+      "history": [
+        {
+          "task": 0,
+          "per_task_acc": [
+            0.9990543735224586
+          ],
+          "average_acc": 0.9990543735224586,
+          "current_acc": 0.9990543735224586,
+          "constraint_residual": 0.0
+        },
+        {
+          "task": 1,
+          "per_task_acc": [
+            0.9645390070921985,
+            0.7766895200783546
+          ],
+          "average_acc": 0.8706142635852765,
+          "current_acc": 0.7766895200783546,
+          "constraint_residual": 0.15318692987784743
+        },
+        {
+          "task": 2,
+          "per_task_acc": [
+            0.28463356973995274,
+            0.5073457394711067,
+            0.9327641408751334
+          ],
+          "average_acc": 0.5749144833620643,
+          "current_acc": 0.9327641408751334,
+          "constraint_residual": 0.052616302971728146
+        },
+        {
+          "task": 3,
+          "per_task_acc": [
+            0.14988179669030732,
+            0.10039177277179236,
+            0.47331910352187834,
+            0.9838872104733132
+          ],
+          "average_acc": 0.4268699708643228,
+          "current_acc": 0.9838872104733132,
+          "constraint_residual": 0.039201454259455204
+        },
+        {
+          "task": 4,
+          "per_task_acc": [
+            0.017966903073286054,
+            0.0004897159647404506,
+            0.04909284951974386,
+            0.7774420946626385,
+            0.9006555723651034
+          ],
+          "average_acc": 0.3491294271171025,
+          "current_acc": 0.9006555723651034,
+          "constraint_residual": 0.037421183893457055
+        }
+      ],
+      "final_average_acc": 0.3491294271171025,
+      "final_per_task_acc": [
+        0.017966903073286054,
+        0.0004897159647404506,
+        0.04909284951974386,
+        0.7774420946626385,
+        0.9006555723651034
+      ],
+      "backward_transfer": -0.7118509204322128,
+      "rank_per_task": 2,
+      "k_max": 8,
+      "lr": 0.01,
+      "lr_bias": 0.01,
+      "eta_dual": 1.0
+    }
+  ]
+}
