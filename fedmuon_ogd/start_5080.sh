@@ -258,11 +258,18 @@ main() {
   echo "smoke 结束。这只是工具检查，不是研究成果。日志在 $LOG_DIR 和 $SMOKE_OUT。"
 }
 
-if [[ "${START_5080_SOURCE_ONLY:-0}" != "1" ]]; then
+launch_main() {
   mkdir -p "$LOG_DIR"
+  # The parent disables errexit only so it can read the pipeline status.
+  # main itself must run in a subshell that turns errexit back on; otherwise
+  # a failure inside main is ignored and the launcher can exit 0.
   set +e
-  main "$@" 2>&1 | tee -a "$LOG_DIR/launcher.log"
-  status=${PIPESTATUS[0]}
-  set -e
-  exit "$status"
+  (set -e; main "$@") 2>&1 | tee -a "$LOG_DIR/launcher.log"
+  local status=${PIPESTATUS[0]}
+  return "$status"
+}
+
+if [[ "${START_5080_SOURCE_ONLY:-0}" != "1" ]]; then
+  launch_main "$@"
+  exit $?
 fi
